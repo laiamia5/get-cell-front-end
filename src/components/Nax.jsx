@@ -59,6 +59,9 @@ export default function Nav () {
                   vaciar()
                   }}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></button>
                 </div>
+                <div style={{borderRadius: '50%', background: '#ccc', height: '26px', width: '50px', right: '2px', top: '2px'}}>
+                  <FontAwesomeIcon icon="fa-solid fa-cart-shopping" style={{marginLeft: '4px'}}/>
+                </div>
 
 
             {/* <div class="ml-auto">

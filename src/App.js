@@ -7,6 +7,8 @@ import './styles/fondo.css'
 import {Route, Routes} from 'react-router'
 import Contacto from './components/Contacto';
 import Tienda from './components/Tienda'
+import Detalle from './components/Detalle';
+import Carrito from './components/Carrito';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path='/' element={<Index/>}/>
         <Route path='/tienda' element={<Tienda/>}/>
         <Route path='/contacto' element={<Contacto/>}/>
+        <Route path='/detalle/:id' element={<Detalle/>}/>
+        <Route path='/carrito' element={<Carrito/>}/>
       </Routes>
       <Footer/>
     </div>

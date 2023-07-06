@@ -9,6 +9,7 @@ import imagen2 from '../../tools/imagen.png'
 import { useEffect, useState } from "react";
 import {useSelector, useDispatch} from 'react-redux'
 import { agregar_al_carrito, eliminar_del_carrito, disminuir_cantidad } from "../../redux/actions";
+import {Link} from 'react-router-dom'
 
 export default function Card ({props}){
   const dispatch = useDispatch()
@@ -28,7 +29,7 @@ export default function Card ({props}){
               </div>
               <p class="post-title" style={{color: '#2D2B3A'}}>$ {props.precio}</p>
               <div class="footer">
-                <a style={{color: '#007bff'}}>Read More <span class="mai-chevron-forward text-sm"></span></a>
+                <Link to={`/detalle/${props.id}`} style={{textDecoration: 'none'}}><a style={{color: '#007bff'}}>Leer mas<span class="mai-chevron-forward text-sm"></span></a></Link>
               </div>
             </div>
 

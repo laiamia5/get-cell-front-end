@@ -27,3 +27,13 @@ export const buscar_producto_por = async (nombre, categoria) => {
     .catch((err) => console.log(err))
     return response
 }
+
+export const obtener_un_producto = async (id) => {
+    let response;
+        await axios.get(`${url}/productos/${id}`)
+        .then((res) => {
+            response = res.data
+        })
+        .catch((err) => console.log(err) )
+        return response
+}
