@@ -5,10 +5,21 @@
 	 background: #293949;
 	
 } */
+
+.sidebar::-webkit-scrollbar {
+	width: 0; /* Oculta la barra de desplazamiento vertical */
+	height: 0; /* Oculta la barra de desplazamiento horizontal */
+  }
+  
+
  .sidebar-toggle {
 	 margin-left: -240px;
 }
  .sidebar {
+	position: fixed ;
+    overflow-y: scroll;
+	animation-name: aparecer;
+	animation-duration: .7s;
     font-family: 'Open Sans', sans-serif;
     padding: 0;
     margin: 0;
@@ -17,7 +28,7 @@
 	 width: 240px;
 	 height: 100%;
 	 background: rgb(29, 20, 80);
-	 position: absolute;
+	 /* position: absolute; */
 	 -webkit-transition: all .3s ease-in-out;
 	 -moz-transition: all .3s ease-in-out;
 	 -o-transition: all .3s ease-in-out;
@@ -34,7 +45,7 @@
 	 border-bottom: 1px solid rgba(255,255,255,0.05);
 }
  .sidebar #leftside-navigation ul li.active > a {
-	 color: #1abc9c;
+	 color: #ffffff;
 }
  .sidebar #leftside-navigation ul li.active ul {
 	 display: block;
@@ -55,6 +66,11 @@
  .sidebar #leftside-navigation ul li a:hover {
 	 color: #ffffff;
 }
+
+.menu-items.active > a {
+	border-left: 1px solid #ffffff;
+}
+
  .sidebar #leftside-navigation ul li a span {
 	 display: inline-block;
 }
@@ -68,7 +84,8 @@
 	 display: none;
 }
  .sidebar #leftside-navigation ul ul li {
-	 background: #23313f;
+	border-bottom: 1px solid #8888a917 !important;
+	 background: #28116e;
 	 margin-bottom: 0;
 	 margin-left: 0;
 	 margin-right: 0;
@@ -100,3 +117,51 @@
 		transform: rotate(-20deg)
 	}
 }
+
+@keyframes aparecer {
+	0%{
+		transform: translateX(-500px)
+	}
+	100%{
+		transform: translateX(0)
+	}
+}
+
+
+@keyframes deslizamiento-open {
+	0%{
+		overflow: hidden;
+		max-height: 0;
+	}
+	100%{
+		overflow: hidden;
+		max-height: 700px;
+	}
+}
+
+@keyframes deslizamiento-close {
+	0%{
+		display: block;
+		overflow: hidden;
+		max-height: 700px;
+	}
+	98%{
+		overflow: hidden;
+		max-height: 0;
+	}
+	100%{
+		display: none;
+	}
+}
+
+.animation-slice{
+	animation-name: deslizamiento-open ;
+	animation-duration: 1.5s;
+	transition: max-height 0.3s ease;
+}
+
+.submenu:not(.active) .animation-slice{
+	animation-name: deslizamiento-close ;
+	animation-duration: 1.5s;
+	transition: max-height 0.3s ease;
+} 

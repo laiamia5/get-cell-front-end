@@ -7,7 +7,7 @@ import "../assets/vendor/animate/animate.css"
 
 export default function Footer (){
     return(
-        <footer class="page-footer">
+        <footer class="page-footer" style={{zIndex: '99999'}}>
         <div class="container">
           <div class="row justify-content-center mb-5">
             <div class="col-lg-3 py-3">

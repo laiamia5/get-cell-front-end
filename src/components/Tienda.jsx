@@ -8,7 +8,6 @@ import { useSearchParams } from "react-router-dom";
 
 
 export default function Tienda (){
-  // const location = useLocation()
   const [params] = useSearchParams()
   const [data, setData] = useState([])
   const [page, setPage] = useState(0)
@@ -18,9 +17,8 @@ export default function Tienda (){
   }, [])
 
   useEffect(() => {
-    buscar_producto_por(params.get('nombre')).then((res) =>{ 
-      setData(res)
-      console.log(res)
+    buscar_producto_por(params.get('nombre')).then(async (res) =>{
+        setData(res) 
     })
   }, [params])
 
@@ -42,9 +40,14 @@ export default function Tienda (){
   <main style={{marginLeft: '250px'}}>
     <div class="page-section">
       <div class="container">
+{/* ----------------------------------- si no encuentra nada--------------------------- */}
+          <div class="pagination justify-content-center">
+            {data.length === 0 && <p className="page-item" > no se encontraronresultados de su busqueda</p> }
+          </div>
+{/* -----------------------------si encuentra algo------------------------------- */}
         <div class="row">
-
           {data[page]?.map((e) => <Card props={e} />)}
+
 {/* ------------------------botones---------------------- */}
           <div class="col-12 mt-5">
             <nav aria-label="Page Navigation">

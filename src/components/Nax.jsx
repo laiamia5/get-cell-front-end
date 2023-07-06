@@ -38,7 +38,7 @@ export default function Nav () {
                <Link to='/' style={{textDecoration:'none'}}><a  class="nav-link" >Inicio</a></Link> 
               </li>
               <li class="nav-item">
-              <Link to='/tienda'><a  class="nav-link">Tienda</a></Link> 
+              <Link to='/tienda'  style={{textDecoration:'none'}}><a  class="nav-link">Tienda</a></Link> 
               </li>
               <li class="nav-item">
                 <a href="services.html" class="nav-link">Servicios</a>
