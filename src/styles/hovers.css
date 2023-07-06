@@ -1,0 +1,11 @@
+/* svg:hover{
+    background-color: #6C55F9;
+    cursor: pointer;
+    transition: all 1s;
+} */
+
+path, g{
+    stroke: #6C55F9;
+    cursor: pointer;
+    transition: all 1s;
+}
