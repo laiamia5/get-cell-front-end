@@ -5,7 +5,7 @@ import '../assets/css/maicons.css'
 import '../assets/css/theme.css'
 import "../assets/css/bootstrap.css"
 import "../assets/vendor/animate/animate.css"
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import '../styles/search.css'
@@ -35,19 +35,20 @@ export default function Nav () {
           <div class="navbar-collapse collapse" id="navbarContent">
             <ul class="navbar-nav ml-lg-4 pt-3 pt-lg-0">
               <li class="nav-item active">
-               <Link to='/' style={{textDecoration:'none'}}><a  class="nav-link" >Inicio</a></Link> 
+               <NavLink to='/' style={{textDecoration:'none'}} ><a  class="nav-link" >Inicio</a></NavLink> 
               </li>
               <li class="nav-item">
-              <Link to='/tienda'  style={{textDecoration:'none'}}><a  class="nav-link">Tienda</a></Link> 
+              <NavLink to='/tienda'  style={{textDecoration:'none'}}><a  class="nav-link">Tienda</a></NavLink> 
+              {/* <div style={{width: '50px', height: '1px', background: 'rgb(108, 85, 249)', position: 'absolute'}}></div> */}
               </li>
               <li class="nav-item">
                 <a class="nav-link">Servicios</a>
               </li>
               <li class="nav-item">
-              <Link to='/carrito'  style={{textDecoration:'none'}}> <a class="nav-link">Carrito</a></Link>
+              <NavLink to='/carrito'  style={{textDecoration:'none'}}> <a class="nav-link">Carrito</a></NavLink>
               </li>
               <li class="nav-item">
-              <Link to='/contacto' style={{textDecoration:'none'}}><a class="nav-link">Contactanos</a></Link> 
+              <NavLink to='/contacto' style={{textDecoration:'none'}}><a class="nav-link">Contactanos</a></NavLink> 
               </li>
             </ul>
                 {/* ----------------------despues cambiarle el estilo obvs-------------------- */}

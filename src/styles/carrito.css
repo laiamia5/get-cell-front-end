@@ -220,7 +220,7 @@
 
   @media all and (min-width: 600px) {
 
-  
+
     .container_carrito {
       width: 75%;
       max-width: 960px;
@@ -254,3 +254,21 @@
     }
   }
   
+
+  @media all and (max-width: 830px) {
+    /* .columnas{
+      display: flex;
+      flex-wrap: wrap;
+    } */
+
+    .price, .name{
+      margin-left: 10%;
+    }
+  }
+
+  @media all and (max-width: 767px) {
+    .columnas{
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }

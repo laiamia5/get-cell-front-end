@@ -67,7 +67,7 @@
 	 color: #ffffff;
 }
 
-.menu-items.active > a {
+.menu-items-active > a {
 	border-left: 1px solid #ffffff;
 }
 

@@ -15,7 +15,7 @@ export default function Index () {
     
     return(
     <div className="fondo" >
-        <div class="page-banner home-banner">
+        <div class="page-banner home-banner fondo">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                 <div class="col-lg-6 py-3 wow fadeInUp">
@@ -23,7 +23,6 @@ export default function Index () {
                     <p class="text-lg mb-5">Ignite the most powerfull growth engine you have ever built for your company</p>
 
                     <a href="#" class="btn btn-outline border text-secondary">More Info</a>
-                    <a href="#" class="btn btn-primary btn-split ml-2">Watch Video <div class="fab"><span class="mai-play"></span></div></a>
                 </div>
                 <div class="col-lg-6 py-3 wow zoomIn">
                     {/* arreglar responsive de la animacion */}

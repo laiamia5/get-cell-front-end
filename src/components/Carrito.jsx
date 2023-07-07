@@ -62,38 +62,45 @@ export default function Carrito (){
                           </div>
                       </li>) 
                     })
-                    : <div>agrega productos al carrito</div>} 
+                    : <div class="pagination justify-content-center content-center flex-wrap" style={{height: '400px', alignContent: 'center'}}><p class="page-item" style={{color: 'rgba(0, 0, 0, 0.7)'}}> el carrito esta vacio, agrega productos de nuestra tienda !</p></div>} 
                   </ul>
               </div>
             </section>
-
-            <div class="widget-box" style={{maxWidth: '300px', marginRight: '5%', marginTop: '5%'}}>
-                <h4 class="widget-title">Resumen </h4>
-                <div class="divider">
-                </div>
-                <div class="summary"  style={{...summary, ...promotionSummaryCheckout}}>
-                  <ul className="carrito_ul" style={carrito_ul}>
-                    <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
-                      <li style={summaryList}>Subtotal </li>
-                      <span style={{...summaryList, marginLeft:'45%'}}>$8000</span>
-                    </div>
-                    <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
-                      <li style={summaryList} v-if="discount > 0">Discount </li>
-                      <span style={{...summaryList, marginLeft:'45%'}}>$660</span>
-                    </div>
-                    <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
-                      <li style={summaryList}>Tax </li>
-                      <span style={{...summaryList, marginLeft:'45%'}}>$50</span>
-                    </div>
-                    <hr />
-                    <div style={{display: 'grid',  gridTemplateColumns:'20% 80%' }}>
-                      <li style={{...summaryListTotal, ...summaryList}} class="total">Total</li>
-                      <span style={{...summaryList, fontWeight: 'bold'}}>$400</span>
-                    </div>
-                    
-                  </ul>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block boton_carrito" style={{width: '100%'}}>Realizar compra</button>
+            <div>
+              <div class="widget-box" style={{maxWidth: '300px', marginRight: '5%', marginTop: '5%'}}>
+                  <h4 class="widget-title">Resumen </h4>
+                  <div class="divider">
+                  </div>
+                  <div class="summary"  style={{...summary, ...promotionSummaryCheckout}}>
+                    <ul className="carrito_ul" style={carrito_ul}>
+                      <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
+                        <li style={summaryList}>Subtotal </li>
+                        <span style={{...summaryList, marginLeft:'45%'}}>$8000</span>
+                      </div>
+                      <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
+                        <li style={summaryList} v-if="discount > 0">Descuento</li>
+                        <span style={{...summaryList, marginLeft:'45%'}}>$660</span>
+                      </div>
+                      <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
+                        <li style={summaryList}>Envío</li>
+                        <span style={{...summaryList, marginLeft:'45%'}}>$50</span>
+                      </div>
+                      <hr />
+                      <div style={{display: 'grid',  gridTemplateColumns:'20% 80%' }}>
+                        <li style={{...summaryListTotal, ...summaryList}} class="total">Total</li>
+                        <span style={{...summaryList, fontWeight: 'bold'}}>$400</span>
+                      </div>
+                    </ul>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block boton_carrito" style={{width: '100%'}}>Realizar compra</button>
+              </div>
+              
+              <div class="widget-box" style={{ maxWidth: '300px'}}>
+                <form action="#" class="search-widget">
+                  <input type="text" class="form-control" placeholder="Cupón de descuento"/>
+                  <button class="btn btn-primary btn-block boton_carrito" style={{textTransform: 'lowercase'}}>Aplicar</button>
+                </form>
+              </div>
             </div>
         </div>
       </div>

@@ -22,7 +22,7 @@
 .phone {
   height: 428px;
   width: 226px;
-  background:#05357e;
+  background:#4b24c5;
   border-radius: 50px;
   position: relative;
   overflow: hidden;
@@ -33,7 +33,7 @@
     height: 500px;
     width: 200px;
     left: 50%;
-    background: #013fa1;
+    background: #542ad7;
     transform: rotate(18deg);
   }
   
@@ -41,7 +41,7 @@
     height: 8px;
     width: 42px;
     border-radius: 4px;
-    background: rgb(1 43 84);
+    background: rgb(60 36 159);
     position: relative;
     top: 23px;
     left: 50%;
@@ -52,7 +52,7 @@
 .phone-button {
   height: 40px;
   width: 40px;
-  background: rgb(1 43 84);
+  background: rgb(60 32 173);
   border-radius: 50%;
   position: absolute;
   left: 50%;

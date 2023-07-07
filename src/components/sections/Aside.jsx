@@ -84,9 +84,9 @@ export default function Aside (){
             </i>
           </a>
           <ul className="animation-slice">
-            <li class="active menu-items"><a >Inbox</a>
+            <li class="menu-items-active"><a >Inbox</a>
             </li>
-            <li><a >Compose Mail</a>
+            <li ><a >Compose Mail</a>
             </li>
           </ul>
         </li>
