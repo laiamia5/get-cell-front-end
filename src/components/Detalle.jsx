@@ -2,8 +2,11 @@ import React from "react";
 import { useParams } from "react-router";
 import { obtener_un_producto } from "../tools/peticiones";
 import { useEffect , useState} from "react";
+import { agregar_al_carrito } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 export default function Detalle (){
+  const dispatch = useDispatch()
     const {id} = useParams()
     const [elemento, setElemento] = useState({})
 
@@ -15,8 +18,7 @@ export default function Detalle (){
     }, [])
 
     return(
-        <>
-       
+        <>  
   <main>
     <div class="page-section pt-5">
       <div class="container">
@@ -27,7 +29,7 @@ export default function Detalle (){
             <li class="breadcrumb-item active">{elemento.nombre}</li>
           </ul>
         </nav>
-        
+        <button onClick={() => dispatch(agregar_al_carrito(elemento))}>aañadir</button>
         <div class="row">
           <div class="col-lg-8">
             <div class="blog-single-wrap">

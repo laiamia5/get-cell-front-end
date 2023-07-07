@@ -186,10 +186,24 @@
 
 
 */
+.columnas{
+  display: grid;
+  grid-template-columns: 1fr 350px;
+}
+
+.boton_carrito:hover{
+  background-color: #5d2bf5;
+}
+
+.boton_carrito{
+  background-color: #7a4fff;
+  border-color: #774ff1;
+}
 
 @media all and (max-width: 599px) {
   .thumbnail img {
     display: none;
+
   }
 
   .quantity > input {

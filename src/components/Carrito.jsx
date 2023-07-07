@@ -2,85 +2,94 @@ import React from "react";
 import '../styles/carrito.css'
 import foto from '../tools/imagen.png'
 import {useSelector} from 'react-redux'
+import { useEffect, useState } from "react";
+import {useDispatch} from 'react-redux'
+import { eliminar_del_carrito, alterar_cantidad } from "../redux/actions";
 
 export default function Carrito (){
+  const dispatch = useDispatch()
   const productos = useSelector(state => state.carrito)
+  const [productosDom, setProductosDom ] = useState([])
+
+  useEffect(() => {
+    setProductosDom(productos)
+  }, [productos])
+
     return(
-        <div style={body}>
-        <div id="app">
-        <section class="container_carrito" style={container}>
-            <div v-if="products.length > 0">
-                <ul class="products carrito_ul" style={{...carrito_ul, ...products}}>
-                    <li  v-for="(product, index) in products" style={{...row, ...products_li}}>
-                        <div class="left" style={{...col_left, ...float_left}}>
-                            <div class="thumbnail">
-                            <a  style={carrito_a} className="carrito_a">
-                                <img style={img} src={foto}/>
-                            </a>
-                            </div>
-                            <div class="detail" style={detail}>
-                            <div class="name" style={name}><a style={carrito_a} className="carrito_a">samsung galaxy g5</a></div>
-                            <div class="description" style={description}>lorem ipsum dolor bla cgxckd gdgkd</div>
-                            <div class="price" style={price}>$778</div>
-                            </div>
-                        </div>
+      <div style={body}>
+        <div id="app" className="columnas">
+          <section class="container_carrito" style={container}>
+              <div v-if="products.length > 0">
+                  <ul class="products carrito_ul" style={{...carrito_ul, ...products}}>
+                    {productosDom.map((e) => {
+                      return(<li  v-for="(product, index) in products" style={{...row, ...products_li}}>
+                          <div class="left" style={{...col_left, ...float_left}}>
+                              <div class="thumbnail">
+                              <a  style={carrito_a} className="carrito_a">
+                                  <img style={img} src={foto}/>
+                              </a>
+                              </div>
+                              <div class="detail" style={detail}>
+                                <div class="name" style={name}><a style={carrito_a} className="carrito_a">{e.nombre}</a></div>
+                                <div class="description" style={description}>{e.descripcion}</div>
+                                <div class="price" style={price}>${e.precio}</div>
+                              </div>
+                          </div>
 
-                        <div class="right" style={{...col_right, ...float_left}}>
-                            <div class="quantity" style={{...quantityRemove, ...float_left}}>
-                            <input type="number" class="quantity carrito_input carrito_input_number" step="1" style={{...carrito_input, ...float_left, ...quantityRemove, ...quantityInput}} />
-                            </div>
-                            
-                            <div class="remove" style={{...float_left, ...quantityRemove}}>
-                            <svg 
-                            style={{...close, ...removeSvg}}
-                            version="1.1"
-                            className="close"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlnsXlink="http://www.w3.org/1999/xlink"
-                            x="0px"
-                            y="0px"
-                            viewBox="0 0 60 60"
-                            enableBackground="new 0 0 60 60"
-                            xmlSpace="preserve"
-                            >
-                            <polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812 22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812" />
-                            </svg>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-           
-        </section>
-
-            <section class="container_carrito" style={container}v-if="products.length > 0">
-            <div class="summary"  style={{...summary, ...promotionSummaryCheckout}}>
-                <ul className="carrito_ul" style={carrito_ul}>
-                <li style={summaryList}>Subtotal <span style={summaryListSpan}>$8000</span></li>
-                <li style={summaryList} v-if="discount > 0">Discount <span style={summaryListSpan}>$660</span></li>
-                <li style={summaryList}>Tax <span style={summaryListSpan}>$50</span></li>
-                <li style={{...summaryListTotal, ...summaryList}} class="total">Total <span style={summaryListSpan}>$400</span></li>
-                </ul>
-            </div>
-
-            <div class="checkout"  style={{...checkout, ...promotionSummaryCheckout}}>
-                <button className="carrito_boton" style={{...checkoutButton, ...carrito_boton}} type="button">Check Out</button>
-            </div>
+                          <div class="right" style={{...col_right, ...float_left}}>
+                              <div class="quantity" style={{...quantityRemove, ...float_left}}>
+                              <input type="number" defaultValue={e?.cantidad} onBlur={(el) => dispatch(alterar_cantidad(e.id, el.target.value))} class="quantity carrito_input carrito_input_number" step="1" style={{...carrito_input, ...float_left, ...quantityRemove, ...quantityInput}} />
+                              </div>
+                              
+                              <div class="remove" onClick={() => dispatch(eliminar_del_carrito(e.id))} style={{...float_left, ...quantityRemove}}>
+                              <svg 
+                              style={{...close, ...removeSvg}}
+                              version="1.1"
+                              className="close"
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlnsXlink="http://www.w3.org/1999/xlink"
+                              x="0px"
+                              y="0px"
+                              viewBox="0 0 60 60"
+                              enableBackground="new 0 0 60 60"
+                              xmlSpace="preserve"
+                              >
+                              <polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812 22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812" />
+                              </svg>
+                              </div>
+                          </div>
+                      </li>)
+                    })} 
+                  </ul>
+              </div>
             </section>
+
+            <div class="widget-box" style={{maxWidth: '300px', marginRight: '5%', marginTop: '5%'}}>
+                <h4 class="widget-title">Resumen </h4>
+                <div class="divider">
+                </div>
+                <div class="summary"  style={{...summary, ...promotionSummaryCheckout}}>
+                  <ul className="carrito_ul" style={carrito_ul}>
+                  <li style={summaryList}>Subtotal <span style={summaryListSpan}>$8000</span></li>
+                    <li style={summaryList} v-if="discount > 0">Discount <span style={summaryListSpan}>$660</span></li>
+                    <li style={summaryList}>Tax <span style={summaryListSpan}>$50</span></li>
+                    <li style={{...summaryListTotal, ...summaryList}} class="total">Total <span style={summaryListSpan}>$400</span></li>
+                  </ul>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block boton_carrito" style={{width: '100%'}}>Realizar compra</button>
             </div>
         </div>
+      </div>
     )
 }
-
-
-
 
   
 const body = {
     margin: '20px 0',
     padding: '0',
-    // fontFamily: 'arial, sans-serif',
-    // overflow: 'scroll'
+    overflow: 'auto',
+  scrollbarWidth:' none ',/* Oculta la barra de desplazamiento en navegadores que admiten la propiedad */
+  MsOverflowStyle: 'none'
   }
  
   const img = {
@@ -93,15 +102,6 @@ const body = {
  const carrito_a = {
     textDecoration: 'none',
     color: '#333333'
-  }
-  
-  
- const carrito_boton = {
-    backgroundColor: 'rgb(108, 85, 249)',
-    border: 'none',
-    color: '#ffffff',
-    transition: 'all 0.25s linear',
-    cursor: 'pointer'
   }
   
   const carrito_ul = {
@@ -121,25 +121,7 @@ const body = {
     margin: '0 auto',
     overflow: 'auto'
   } 
-  
-  const header_container ={
-    marginBottom: '1.5rem'
-  }
-  
-  const breadcrumb = {
-    color: '#7d7d7d'
-  }
-
-  const breadcrumb_li = {
-    float: 'left',
-    padding: '0 6px',
-    height: '20px',
-    lineHeight: '20px'
-  }
-  
-  const first_li = {
-    paddingLeft: '2px'
-  }
+   
   
   const count = {
     float: 'right',
@@ -235,7 +217,7 @@ const quantityRemove = {
   };
 
   const promotionSummaryCheckout = {
-    float: 'left',
+    // float: 'left',
     width: '100%',
     marginTop: '1.5rem'
   };

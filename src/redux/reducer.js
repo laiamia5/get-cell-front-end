@@ -2,7 +2,8 @@ import {
     AGREGAR_AL_CARRITO,
     ELIMINAR_DEL_CARRITO,
     FINALIZAR_Y_VACIAR,
-    DISMINUIR_CANTIDAD
+    DISMINUIR_CANTIDAD,
+    ALTERAR_CANTIDAD
 } from './actions'
 
 const initialState = {
@@ -42,6 +43,10 @@ const reducer = (state = initialState, action) => {
                 // ...state,
                 carrito: Math.sign(encontrar.cantidad) !== 1 ? state.carrito.filter((e) => e.id !== action.payload ) : [...state.carrito]
             }
+        case ALTERAR_CANTIDAD :
+            let ubicar = state.carrito.find((e) => e.id === action.payload.id)
+            ubicar.cantidad = action.payload.cantidad
+            return state
         default : 
             return state
     }
