@@ -41,11 +41,11 @@ export default function Nav () {
               <Link to='/tienda'  style={{textDecoration:'none'}}><a  class="nav-link">Tienda</a></Link> 
               </li>
               <li class="nav-item">
-                <a href="services.html" class="nav-link">Servicios</a>
+                <a class="nav-link">Servicios</a>
               </li>
-              {/* <li class="nav-item">
-                <a href="blog.html" class="nav-link">News</a>
-              </li> */}
+              <li class="nav-item">
+              <Link to='/carrito'  style={{textDecoration:'none'}}> <a class="nav-link">Carrito</a></Link>
+              </li>
               <li class="nav-item">
               <Link to='/contacto' style={{textDecoration:'none'}}><a class="nav-link">Contactanos</a></Link> 
               </li>
@@ -59,9 +59,9 @@ export default function Nav () {
                   vaciar()
                   }}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></button>
                 </div>
-                <div style={{borderRadius: '50%', background: '#ccc', height: '26px', width: '50px', right: '2px', top: '2px'}}>
+                {/* <div style={{borderRadius: '50%', background: '#ccc', height: '26px', width: '50px', right: '2px', top: '2px'}}>
                   <FontAwesomeIcon icon="fa-solid fa-cart-shopping" style={{marginLeft: '4px'}}/>
-                </div>
+                </div> */}
 
 
             {/* <div class="ml-auto">
