@@ -21,7 +21,9 @@ export default function Carrito (){
           <section class="container_carrito" style={container}>
               <div v-if="products.length > 0">
                   <ul class="products carrito_ul" style={{...carrito_ul, ...products}}>
-                    {productosDom.map((e) => {
+                    {
+                      productosDom.length !== 0 ?
+                    productosDom.map((e) => {
                       return(<li  v-for="(product, index) in products" style={{...row, ...products_li}}>
                           <div class="left" style={{...col_left, ...float_left}}>
                               <div class="thumbnail">
@@ -58,8 +60,9 @@ export default function Carrito (){
                               </svg>
                               </div>
                           </div>
-                      </li>)
-                    })} 
+                      </li>) 
+                    })
+                    : <div>agrega productos al carrito</div>} 
                   </ul>
               </div>
             </section>
@@ -70,10 +73,24 @@ export default function Carrito (){
                 </div>
                 <div class="summary"  style={{...summary, ...promotionSummaryCheckout}}>
                   <ul className="carrito_ul" style={carrito_ul}>
-                  <li style={summaryList}>Subtotal <span style={summaryListSpan}>$8000</span></li>
-                    <li style={summaryList} v-if="discount > 0">Discount <span style={summaryListSpan}>$660</span></li>
-                    <li style={summaryList}>Tax <span style={summaryListSpan}>$50</span></li>
-                    <li style={{...summaryListTotal, ...summaryList}} class="total">Total <span style={summaryListSpan}>$400</span></li>
+                    <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
+                      <li style={summaryList}>Subtotal </li>
+                      <span style={{...summaryList, marginLeft:'45%'}}>$8000</span>
+                    </div>
+                    <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
+                      <li style={summaryList} v-if="discount > 0">Discount </li>
+                      <span style={{...summaryList, marginLeft:'45%'}}>$660</span>
+                    </div>
+                    <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
+                      <li style={summaryList}>Tax </li>
+                      <span style={{...summaryList, marginLeft:'45%'}}>$50</span>
+                    </div>
+                    <hr />
+                    <div style={{display: 'grid',  gridTemplateColumns:'20% 80%' }}>
+                      <li style={{...summaryListTotal, ...summaryList}} class="total">Total</li>
+                      <span style={{...summaryList, fontWeight: 'bold'}}>$400</span>
+                    </div>
+                    
                   </ul>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block boton_carrito" style={{width: '100%'}}>Realizar compra</button>
@@ -251,7 +268,9 @@ const summary = {
   };
   
   const summaryList = {
-    padding: '0.5rem 0'
+    padding: '0.5rem 0',
+    // float: 'left'
+    // with: '80%'
   };
   
   const summaryListSpan = {
