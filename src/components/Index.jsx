@@ -9,6 +9,7 @@ import Icon from '../components/sections/Icon'
 import Icon2 from "./sections/Icon2";
 import Icon3 from './sections/Icon3'
 import PhoneAnimation from "./sections/PhoneAnimation";
+import pic from '../tools/picback.png'
 
 
 export default function Index () {
@@ -26,6 +27,8 @@ export default function Index () {
                 </div>
                 <div class="col-lg-6 py-3 wow zoomIn">
                     {/* arreglar responsive de la animacion */}
+                    <img src={pic} alt="" style={{position: "absolute", transform: 'translate(-70px)'}}/>
+
                     <PhoneAnimation />
                 </div>
                 </div>
