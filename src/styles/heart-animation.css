@@ -1,0 +1,42 @@
+
+.heart {
+  background: url('https://abs.twimg.com/a/1454637594/img/t1/web_heart_animation.png');
+  height: 100px;
+  width: 100px;
+}
+
+.heart-click {
+  position: relative;
+  left: 50px;
+  top: 50px;
+  transform: translateX(-50%) translateY(50%) scale(2);
+  opacity: 0;
+}
+
+.heart-click:checked + .heart {
+  animation: like 0.5s forwards steps(28);
+}
+
+@keyframes like {
+  100% {
+    background-position: -2800px;
+  }
+}
+
+.heart-contenedor{
+    transform: translate(80%, -50%)
+}
+
+
+.texto-tachado {
+    text-decoration: line-through;
+    font-size: 20px;
+    margin-top: 7px;
+  }
+
+  .texto-precio-mayor{
+    font-size: 30px;
+    font-weight: 600;
+    color: #212529 !important;
+
+  }

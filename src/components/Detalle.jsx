@@ -4,6 +4,9 @@ import { obtener_un_producto } from "../tools/peticiones";
 import { useEffect , useState} from "react";
 import { agregar_al_carrito } from "../redux/actions";
 import { useDispatch } from "react-redux";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import imagen from '../tools/imagen.png'
+import '../styles/heart-animation.css'
 
 export default function Detalle (){
   const dispatch = useDispatch()
@@ -22,58 +25,51 @@ export default function Detalle (){
   <main>
     <div class="page-section pt-5">
       <div class="container">
-        <nav aria-label="Breadcrumb">
+        {/* <nav aria-label="Breadcrumb">
           <ul class="breadcrumb p-0 mb-0 bg-transparent">
             <li class="breadcrumb-item"><a >Inicio</a></li>
             <li class="breadcrumb-item"><a>Tienda</a></li>
             <li class="breadcrumb-item active">{elemento.nombre}</li>
           </ul>
-        </nav>
-        <button onClick={() => dispatch(agregar_al_carrito(elemento))}>aañadir</button>
+        </nav> */}
+
         <div class="row">
           <div class="col-lg-8">
-            <div class="blog-single-wrap">
-              <div class="header">
-                {/* <div class="post-thumb">
-                  <img src="../assets/img/blog/blog-1.jpg" alt="">
-                </div> */}
-                <div class="meta-header">
-                  <div class="post-author">
-                    {/* <div class="avatar">
-                      <img src="../assets/img/person/person_1.jpg" alt="">
-                    </div> */}
-                    by <a href="#">Stephen Doe</a>
+            <div class="blog-single-wrap" >
+              <div class="header" style={{display: 'grid', gridTemplateColumns: '50% 50%'}}>
+                  <div style={{padding: '20px'}}>
+                    <img src={imagen} style={{maxHeight: '350px'}} />
                   </div>
-  
-                  <div class="post-sharer">
-                    <a href="#" class="btn social-facebook"><span class="mai-logo-facebook-f"></span></a>
-                    <a href="#" class="btn social-twitter"><span class="mai-logo-twitter"></span></a>
-                    <a href="#" class="btn social-linkedin"><span class="mai-logo-linkedin"></span></a>
-                    <a href="#" class="btn"><span class="mai-mail"></span></a>
+                  <div style={{padding: '20px'}}>
+                      <div style={{height: '20px', position: "relative"}}>
+                        <div className="heart-contenedor">
+                          <input class="heart-click" type="checkbox"/>
+                          <div class="heart"></div>
+                        </div>                    
+                      </div>
+                    <h1 class="post-title" style={{fontSize: '33px'}}>{elemento.nombre}</h1>
+                    <div style={{display: "grid", gridTemplateColumns: '35% 65%'}}>
+                      <p className="texto-precio-mayor">$ {elemento.precio}</p>
+                      <p className="texto-tachado">$ {elemento.precioAnterior ? elemento.precioAnterior : 2000}</p>
+                    </div>
+                    <div class="post-content">
+                      <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower.</p>
+                    </div>
+                    <div class="post-meta">
+                        <div class="post-date">
+                          <span class="icon">
+                              <span class="mai-time-outline"></span>
+                          </span> <a href="#">March 10, 2020</a>
+                        </div>
+                        <div class="post-comment-count ml-2">
+                          <span class="icon">
+                              <span class="mai-chatbubbles-outline"></span>
+                            </span> <a href="#">4 Comments</a>
+                          </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <h1 class="post-title">{elemento.nombre}</h1>
-              <div class="post-meta">
-                <div class="post-date">
-                  <span class="icon">
-                    <span class="mai-time-outline"></span>
-                  </span> <a href="#">March 10, 2020</a>
-                </div>
-                <div class="post-comment-count ml-2">
-                  <span class="icon">
-                    <span class="mai-chatbubbles-outline"></span>
-                  </span> <a href="#">4 Comments</a>
-                </div>
-              </div>
-              <div class="post-content">
-                <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui saepe aliquid perferendis neque eos commodi nulla, veniam ex mollitia, quod dignissimos id exercitationem corporis. At optio laudantium suscipit in nam!</p>
-                <blockquote class="quote">“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.”
-                <span class="author">― Marilyn Monroe</span></blockquote>
-                <p>Praesent vel mi bibendum, finibus leo ac, condimentum arcu. Pellentesque sem ex, tristique sit amet suscipit in, mattis imperdiet enim. Integer tempus justo nec velit fringilla, eget eleifend neque blandit. Sed tempor magna sed congue auctor. Mauris eu turpis eget tortor ultricies elementum. Phasellus vel placerat orci, a venenatis justo. Phasellus faucibus venenatis nisl vitae vestibulum. Praesent id nibh arcu. Vivamus sagittis accumsan felis, quis vulputate</p>
-              </div>
             </div>
+          </div>
   
             <div class="comment-form-wrap pt-5">
               <h2 class="mb-5">Leave a comment</h2>
@@ -107,25 +103,19 @@ export default function Detalle (){
           </div>
           <div class="col-lg-4">
             <div class="widget">
-              {/* <!-- Widget search --> */}
               <div class="widget-box">
-                <form action="#" class="search-widget">
-                  <input type="text" class="form-control" placeholder="Enter keyword.."/>
-                  <button type="submit" class="btn btn-primary btn-block">Search</button>
-                </form>
-              </div>
-  
-              <div class="widget-box">
+             
                 <h4 class="widget-title">Category</h4>
                 <div class="divider"></div>
-  
-                <ul class="categories">
-                  <li><a href="#">LifeStyle</a></li>
-                  <li><a href="#">Food</a></li>
-                  <li><a href="#">Healthy</a></li>
-                  <li><a href="#">Sports</a></li>
-                  <li><a href="#">Entertainment</a></li>
-                </ul>
+                <div class="post-sharer" style={{marginBottom: '2%'}}>
+                      <a style={{marginLeft: '5px'}} class="btn social-facebook"><span class="mai-logo-facebook-f"></span></a>
+                      <a style={{marginLeft: '5px'}} href="#" class="btn social-twitter"><span class="mai-logo-twitter"></span></a>
+                      <a style={{marginLeft: '5px', color: 'white', background: '#2cdb52'}} href="#" class="btn wats-hover"><span class="mai-logo-whatsapp"></span></a>
+                  </div>
+                  
+                <button type="submit" class="btn btn-primary btn-block">Comprar ahora</button>
+                <FontAwesomeIcon icon="fa-solid fa-truck-front" />
+
               </div>
   
               <div class="widget-box">
@@ -202,3 +192,4 @@ export default function Detalle (){
         </>
     )
 }
+

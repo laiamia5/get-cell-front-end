@@ -1928,7 +1928,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .blog-single-wrap {
   display: block;
-  padding: 50px 0;
+  padding: 0 0;
 }
 
 .blog-single-wrap .header {
@@ -1977,19 +1977,19 @@ a.text-dark:hover, a.text-dark:focus {
   height: 100%;
 }
 
-.blog-single-wrap .header .post-sharer a  {
+ .post-sharer a  {
  padding: 5px 10px;
  line-height: 1;
  box-shadow: none !important;
 }
 
-.blog-single-wrap .header .post-sharer a[class='btn'] {
-  background-color: #ec9d1e;
+.post-sharer a[class='btn'] {
+  background-color: #2cdb52;
   color: #fff;
 }
 
-.blog-single-wrap .header .post-sharer a[class='btn']:hover {
-  background-color: #d88d14;
+.post-sharer a[class='btn']:hover {
+  background-color: #1fc53b;
   color: #fff;
 }
 
@@ -2011,7 +2011,7 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 50%;
   font-size: 12px;
   text-align: center;
-  background-color: #645F88;
+  background-color: #7c39ff;
   color: #fff;
 }
 
