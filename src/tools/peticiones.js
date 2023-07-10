@@ -1,7 +1,9 @@
 import axios from 'axios';
 let url = process.env.REACT_APP_BACKEND_URL
 
+
 /////////////////////// OBTENER TODOS LOS PRODUCTOS //////////////////////////////
+
 
 export const obtener_productos = async () => {
     let resp;
@@ -37,3 +39,5 @@ export const obtener_un_producto = async (id) => {
         .catch((err) => console.log(err) )
         return response
 }
+
+

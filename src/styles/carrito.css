@@ -193,11 +193,14 @@
 
 .boton_carrito:hover{
   background-color: #5d2bf5;
+  color: white;
+
 }
 
 .boton_carrito{
   background-color: #7a4fff;
   border-color: #774ff1;
+  color: white;
 }
 
 @media all and (max-width: 599px) {

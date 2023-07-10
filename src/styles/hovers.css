@@ -4,8 +4,9 @@
     transition: all 1s;
 } */
 
-path, g{
+.icons-violet path, g{
     stroke: #6C55F9;
     cursor: pointer;
     transition: all 1s;
 }
+

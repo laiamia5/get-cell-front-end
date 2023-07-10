@@ -104,18 +104,35 @@ export default function Detalle (){
           <div class="col-lg-4">
             <div class="widget">
               <div class="widget-box">
-             
-                <h4 class="widget-title">Category</h4>
-                <div class="divider"></div>
-                <div class="post-sharer" style={{marginBottom: '2%'}}>
-                      <a style={{marginLeft: '5px'}} class="btn social-facebook"><span class="mai-logo-facebook-f"></span></a>
-                      <a style={{marginLeft: '5px'}} href="#" class="btn social-twitter"><span class="mai-logo-twitter"></span></a>
-                      <a style={{marginLeft: '5px', color: 'white', background: '#2cdb52'}} href="#" class="btn wats-hover"><span class="mai-logo-whatsapp"></span></a>
+                <div style={{display: 'flex'}}>
+                  <FontAwesomeIcon icon="fa-solid fa-truck" className="track-svg"/> 
+                  <p className="p-track">Incluye envio gratis</p>
+                </div>
+                <strong>hay Stock disponible </strong>
+                <p style={{marginTop: '7px'}}> (disponibles 3)</p>
+                <div style={{display: 'flex', marginBottom: '10px', flexWrap: 'wrap'}}>
+                  <p style={{marginTop: '7px'}}>Cantidad : </p>
+                  <div>
+                      <select class="form-control input-cantidad" id="demo-simple-select-standard" >
+                        <option value="1">1 unidad</option>
+                        <option value="10">2 unidades</option>
+                        <option value="20">3 unidades</option>
+                        <option value="30">4 unidades</option>
+                      </select>
                   </div>
-                  
-                <button type="submit" class="btn btn-primary btn-block">Comprar ahora</button>
-                <FontAwesomeIcon icon="fa-solid fa-truck-front" />
-
+                </div>
+                
+                <button type="submit" class="btn btn-block boton_carrito">Agregar al carrito</button>
+                <button type="submit" class="btn btn-block boton_carrito">Comprar ahora</button>
+                
+                <div style={{display: 'flex', marginTop: '5px'}}>
+                  <p style={{marginTop: '7px'}}>compartir con</p>
+                  <div class="post-sharer" style={{marginBottom: '2%'}}>
+                      <a style={{marginLeft: '5px', marginTop: '5px'}} class="btn social-facebook"><span class="mai-logo-facebook-f"></span></a>
+                      <a style={{marginLeft: '5px' , marginTop: '5px'}} href="#" class="btn social-twitter"><span class="mai-logo-twitter"></span></a>
+                      <a style={{marginLeft: '5px', color: 'white', background: '#2cdb52' , marginTop: '5px'}} href="#" class="btn wats-hover"><span class="mai-logo-whatsapp"></span></a>
+                  </div>
+                </div>
               </div>
   
               <div class="widget-box">

@@ -92,13 +92,13 @@ export default function Carrito (){
                       </div>
                     </ul>
                   </div>
-                  <button type="submit" class="btn btn-primary btn-block boton_carrito" style={{width: '100%'}}>Realizar compra</button>
+                  <button type="submit" class="btn btn-block boton_carrito" style={{width: '100%'}}>Realizar compra</button>
               </div>
               
               <div class="widget-box" style={{ maxWidth: '300px'}}>
                 <form action="#" class="search-widget">
                   <input type="text" class="form-control" placeholder="Cupón de descuento"/>
-                  <button class="btn btn-primary btn-block boton_carrito" style={{textTransform: 'lowercase'}}>Aplicar</button>
+                  <button class="btn btn-block boton_carrito" style={{textTransform: 'lowercase'}}>Aplicar</button>
                 </form>
               </div>
             </div>

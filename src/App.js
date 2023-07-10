@@ -9,10 +9,13 @@ import Contacto from './components/Contacto';
 import Tienda from './components/Tienda'
 import Detalle from './components/Detalle';
 import Carrito from './components/Carrito';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div className="App ">
+      <ToastContainer/>
       <Nav/>
       <Routes>
         <Route path='/' element={<Index/>}/>

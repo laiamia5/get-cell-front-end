@@ -15,7 +15,7 @@ import pic from '../tools/picback.png'
 export default function Index () {
     
     return(
-    <div className="fondo" >
+    <div className="fondo icons-violet" >
         <div class="page-banner home-banner fondo">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
