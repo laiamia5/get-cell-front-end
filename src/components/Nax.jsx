@@ -7,7 +7,7 @@ import "../assets/css/bootstrap.css"
 import "../assets/vendor/animate/animate.css"
 import {Link, NavLink} from 'react-router-dom'
 import { useSearchParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../styles/search.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -19,12 +19,13 @@ export default function Nav () {
   let vaciar = () =>{
     document.getElementById("busqueda").value = "";
  }
+
     return(
       <div style={{marginBottom: '1%'}}>
     <div class="back-to-top"></div>
 
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light navbar-float">
+    <header style={{height: '80px'}}>
+      <nav class="navbar navbar-expand-lg navbar-light navbar-float barra-nav" style={{position: 'fixed'}}>
         <div class="container">
           <a href="index.html" class="navbar-brand">Get<span  style={{color: '#6C55F9 '}}>Cell</span></a>
 
@@ -52,6 +53,7 @@ export default function Nav () {
               </li>
             </ul>
                 {/* ----------------------despues cambiarle el estilo obvs-------------------- */}
+                
                 <div class="sample one">
                   <input type="text" name="search" class="sample_input" placeholder="buscar producto" id='busqueda' onChange={(e) => setInput(e.target.value) }/>
                   <button class="btn btn-search sample_boton"  onClick={(e) => {
@@ -60,16 +62,26 @@ export default function Nav () {
                   vaciar()
                   }}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></button>
                 </div>
-                {/* <div style={{borderRadius: '50%', background: '#ccc', height: '26px', width: '50px', right: '2px', top: '2px'}}>
-                  <FontAwesomeIcon icon="fa-solid fa-cart-shopping" style={{marginLeft: '4px'}}/>
-                </div> */}
+               
 
-
-            {/* <div class="ml-auto">
-              <a href="#" class="btn btn-outline rounded-pill">Get a Quote</a>
-            </div> */}
+                
+            
           </div>
         </div>
+
+
+
+        {/* <div style={{display: 'flex', marginLeft: '2%', marginRight:'2%'}}>
+                  <button style={{transform: 'translateX(-80px)'}} class="btn btn-search sample_boton"><FontAwesomeIcon icon="fa-solid fa-heart" /></button>
+                  <button style={{transform: 'translateX(-40px)'}}  class="btn btn-search sample_boton"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" /></button>
+                  <button class="btn btn-search sample_boton"><FontAwesomeIcon icon="fa-solid fa-user" /></button>
+                  
+                </div> */}
+
+                
+
+        
+        
       </nav>
 
     

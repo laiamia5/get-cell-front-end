@@ -104,5 +104,6 @@
  
 
   .input-cantidad:focus{
-outline: none !important;
+  outline: none !important;
+  box-shadow: none;
   }

@@ -10,6 +10,7 @@ import Icon2 from "./sections/Icon2";
 import Icon3 from './sections/Icon3'
 import PhoneAnimation from "./sections/PhoneAnimation";
 import pic from '../tools/picback.png'
+import Fidelizar from './sections/Fidelizar'
 
 
 export default function Index () {
@@ -84,7 +85,7 @@ export default function Index () {
 
         <Productos/>
         {/* <PhoneAnimation/> */}
-
+        <Fidelizar/>
     </div>
     )
 }

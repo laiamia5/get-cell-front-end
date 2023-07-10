@@ -47,7 +47,7 @@ export default function Card ({props}){
                 <p class="post-title" style={{color: '#2D2B3A', fontSize: '23px'}}>$ {props.precio}</p>
                 <p class="post-title" style={{textDecoration: 'line-through'}}>$ {props.precioAnterior ? props.precioAnterior : 20000 }</p>
               </div>
-              <button className="boton_carrito" style={{width: '100%', borderRadius: '5px', outline: 'none',fontSize: '14px', padding: '2px 0px 2px 0px'}}
+              <button className="boton_carrito" style={{width: '100%', borderRadius: '5px', outline: 'none',fontSize: '14px', padding: '2px 0px 2px 0px', border: '1px solid #774ff1' }}
                onClick={() =>{ 
                 dispatch(agregar_al_carrito(props))
                 showToastMessage('success', 'su producto se ha agregado al carrito')

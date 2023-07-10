@@ -108,17 +108,23 @@ export default function Detalle (){
                   <FontAwesomeIcon icon="fa-solid fa-truck" className="track-svg"/> 
                   <p className="p-track">Incluye envio gratis</p>
                 </div>
-                <strong>hay Stock disponible </strong>
-                <p style={{marginTop: '7px'}}> (disponibles 3)</p>
-                <div style={{display: 'flex', marginBottom: '10px', flexWrap: 'wrap'}}>
-                  <p style={{marginTop: '7px'}}>Cantidad : </p>
-                  <div>
-                      <select class="form-control input-cantidad" id="demo-simple-select-standard" >
-                        <option value="1">1 unidad</option>
-                        <option value="10">2 unidades</option>
-                        <option value="20">3 unidades</option>
-                        <option value="30">4 unidades</option>
-                      </select>
+                
+                <div style={{display: 'grid', gridTemplateRows: '1fr 1fr'}}>
+                  <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                    <strong style={{marginTop: '7px'}}>hay Stock disponible </strong>
+                    <p style={{marginTop: '7px', marginLeft: '3px'}}> (disponibles 3)</p>
+                  </div>
+                  <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                    <p style={{marginTop: '7px'}}>Cantidad : </p>
+                    <div>
+                        <select class="form-control input-cantidad" id="demo-simple-select-standard" >
+                          <option value="1">1 unidad</option>
+                          <option value="10">2 unidades</option>
+                          <option value="20">3 unidades</option>
+                          <option value="30">4 unidades</option>
+                          <option value="30">5 unidades</option>
+                        </select>
+                    </div>
                   </div>
                 </div>
                 
