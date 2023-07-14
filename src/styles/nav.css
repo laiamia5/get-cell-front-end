@@ -1,4 +1,39 @@
 
+@media (max-width: 991px) {
+  .contenedor-botones-nav{
+    display: none !important;
+  }
+}
+
+.botones-nav{
+  background-color: #ccc !important;
+  border-radius: 50% !important;
+}
+
+.botones-nav-heart{
+  transform: translateX(-80px)
+}
+
+.botones-nav-cart{
+  transform: translateX(-40px)
+}
+
+.text-deco-none{
+  text-decoration: none;
+}
+
+.nav-link-boton.active{
+  transition: 1.5s;
+}
+
+.nav-link-boton.active > button{
+  background-color: #7a4fff !important;
+}
+
+.nav-link-boton.active > button > svg{
+color: white
+}
+
 
 /* .Nav{
     width: 100%;

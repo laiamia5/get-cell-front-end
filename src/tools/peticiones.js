@@ -41,3 +41,40 @@ export const obtener_un_producto = async (id) => {
 }
 
 
+// ======================================USUARIOS====================================================
+
+
+export const crear_usuario = async (obj) => {
+    console.log(obj)
+    obj['dni'] = Number(obj.dni)
+
+    let response;
+    await axios.post(`${url}/usuarios/signup`, obj)
+    .then((res) => {
+        response = res.data
+    })
+    .catch((err) => console.log(err.message) )
+    return response
+}
+
+export const iniciarSesionCon = async (obj) => {
+    console.log(obj)
+    let respo 
+    await axios.post(`${url}/usuarios/signin`, obj)
+    .then((res) => {
+        respo = res.data
+    })
+    .catch((err) => console.log(err) )
+    return respo
+}
+
+export const verificarToken = async (token) => {
+    let respo 
+    await axios.get(`${url}/usuarios/perfil/${token}`)
+    .then((res) => {
+        respo = res.data
+        console.log(res.data)
+    })
+    .catch((err) => console.log(err) )
+    return respo
+}

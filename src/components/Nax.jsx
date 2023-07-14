@@ -46,9 +46,6 @@ export default function Nav () {
                 <a class="nav-link">Servicios</a>
               </li>
               <li class="nav-item">
-              <NavLink to='/carrito'  style={{textDecoration:'none'}}> <a class="nav-link">Carrito</a></NavLink>
-              </li>
-              <li class="nav-item">
               <NavLink to='/contacto' style={{textDecoration:'none'}}><a class="nav-link">Contactanos</a></NavLink> 
               </li>
             </ul>
@@ -68,15 +65,22 @@ export default function Nav () {
             
           </div>
         </div>
-
-
-
-        {/* <div style={{display: 'flex', marginLeft: '2%', marginRight:'2%'}}>
-                  <button style={{transform: 'translateX(-80px)'}} class="btn btn-search sample_boton"><FontAwesomeIcon icon="fa-solid fa-heart" /></button>
-                  <button style={{transform: 'translateX(-40px)'}}  class="btn btn-search sample_boton"><FontAwesomeIcon icon="fa-solid fa-cart-shopping" /></button>
-                  <button class="btn btn-search sample_boton"><FontAwesomeIcon icon="fa-solid fa-user" /></button>
-                  
-                </div> */}
+        
+        <div style={{display: 'flex', marginLeft: '2%', marginRight:'2%', transform: 'translateY(-20px)'}} className="contenedor-botones-nav">
+          <button  class="btn btn-search sample_boton botones-nav botones-nav-heart">
+            <FontAwesomeIcon icon="fa-solid fa-heart" />
+          </button>
+          <NavLink to='/carrito' className='text-deco-none nav-link-boton'>
+            <button  class="btn btn-search sample_boton botones-nav botones-nav-cart">
+              <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
+            </button>
+          </NavLink>
+          <NavLink to='/perfil' className='text-deco-none nav-link-boton'>
+            <button class="btn btn-search sample_boton botones-nav botones-nav-user">
+              <FontAwesomeIcon icon="fa-solid fa-user" />
+            </button>
+          </NavLink>
+        </div>
 
                 
 

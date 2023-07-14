@@ -11,6 +11,9 @@ import Detalle from './components/Detalle';
 import Carrito from './components/Carrito';
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Profile from './components/Profile';
+import Registro from './components/sections/Registro';
+import IniciarSesion from './components/sections/IniciarSesion'
 
 function App() {
   return (
@@ -23,6 +26,10 @@ function App() {
         <Route path='/contacto' element={<Contacto/>}/>
         <Route path='/detalle/:id' element={<Detalle/>}/>
         <Route path='/carrito' element={<Carrito/>}/>
+        <Route path='/Registro' element={<Registro/>}/>
+        <Route path='/inicio-sesion' element={<IniciarSesion/>}/>
+        <Route path='/perfil' element={<Profile/>}/>
+        
       </Routes>
       <Footer/>
     </div>
