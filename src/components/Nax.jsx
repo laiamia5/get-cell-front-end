@@ -11,7 +11,6 @@ import { useState, useEffect } from "react";
 import '../styles/search.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
 export default function Nav () {
   const [params, setParams] = useSearchParams()
   const [input, setInput] = useState('')
@@ -19,6 +18,11 @@ export default function Nav () {
   let vaciar = () =>{
     document.getElementById("busqueda").value = "";
  }
+
+ useEffect(() => {
+  let data = sessionStorage.getItem('usuario')
+  console.log(data)
+ },[])
 
     return(
       <div style={{marginBottom: '1%'}}>
@@ -75,7 +79,7 @@ export default function Nav () {
               <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
             </button>
           </NavLink>
-          <NavLink to='/perfil' className='text-deco-none nav-link-boton'>
+          <NavLink to={ sessionStorage.getItem('usuario') === '' || sessionStorage.getItem('usuario') === null ? '/registro' :  '/perfil' } className='text-deco-none nav-link-boton'>
             <button class="btn btn-search sample_boton botones-nav botones-nav-user">
               <FontAwesomeIcon icon="fa-solid fa-user" />
             </button>

@@ -50,7 +50,7 @@ const reducer = (state = initialState, action) => {
             ubicar.cantidad = action.payload.cantidad
             return state
         case GENERAR_TOKEN:
-            console.log(action.payload)
+            sessionStorage.setItem("usuario", action.payload)
             return{
                 ...state,
                 token: action.payload

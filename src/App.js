@@ -14,8 +14,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import Profile from './components/Profile';
 import Registro from './components/sections/Registro';
 import IniciarSesion from './components/sections/IniciarSesion'
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { generarToken } from './redux/actions';
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    let sesion_storage = sessionStorage.getItem('usuario')
+    sesion_storage  && dispatch(generarToken(sesion_storage))
+  },[])
   return (
     <div className="App ">
       <ToastContainer/>

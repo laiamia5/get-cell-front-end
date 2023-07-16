@@ -2,16 +2,17 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { crear_usuario } from "../../tools/peticiones";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Registro (){
     const [crearUsuario, setCrearUsuario] = useState({})
     const [respuesta, setRespuesta] = useState()
+    const navigate = useNavigate()
 
     const setear = (name, value) => {
         crearUsuario[`${name}`] = value
         console.log(crearUsuario)
     }
-    
 
     return (
         <div>
@@ -31,6 +32,10 @@ export default function Registro (){
             </p> )
             : <p></p>
             }
+
+            <button onClick={() => navigate('/inicio-sesion')}>
+                inciar sesion
+            </button>
             
         </div>
         
