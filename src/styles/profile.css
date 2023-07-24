@@ -1,0 +1,121 @@
+
+  #user {
+    margin: 50px auto 10px;
+    background: #e9e9e9;
+    box-shadow: -1px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 320px;
+    text-align: center;
+    position: relative;
+  }
+  #user i.fa-gear {
+    position: absolute;
+    border-radius: 5px;
+    top: 15px;
+    right: 15px;
+    font-size: 1.8em;
+    color: #1d2026;
+    transition: color 0.2s ease-in-out;
+  }
+  #user i.fa-gear:hover {
+    color: #8724f8;
+    cursor: pointer;
+  }
+  #avatar {
+    border-radius: 50%;
+    max-width: 120px;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgb(108, 85, 249), rgb(159, 145, 253));
+    padding: 0.16em;
+    margin-top: -50px;
+  }
+  #main {
+    padding: 10px 25px 25px;
+  }
+  #main h3 {
+    font-weight: normal;
+    font-size: 2.3em;
+    margin-bottom: 1px;
+  }
+  #main p {
+    color: #788192;
+    font-size: 1.1em;
+  }
+  #level {
+    margin-bottom: -15px;
+  }
+  #level p {
+    background: rgb(108, 85, 249);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    display: inline-block;
+    color: #e9e9e9;
+  }
+  #information {
+    padding: 25px;
+    background: #f1f1f1;
+    border-radius: 50% 50% 5px 5px / 5px 5px;
+  
+  }
+  #stats {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: flex-start;
+    margin-top: 5px;
+  }
+  #stats > div:not(:first-child) {
+    margin-left: 25px;
+  }
+  #stats h4 {
+    font-size: 1.9em;
+    font-weight: normal;
+  }
+  #stats p {
+    text-transform: uppercase;
+    color: rgb(108, 85, 249);
+    font-weight: 600;
+  }
+  #description {
+    color: #788192;
+    margin: 25px 0;
+  }
+  #actions {
+    display: flex;
+  }
+  #actions button {
+    background: transparent;
+    padding: 5px 10px;
+    flex: 1;
+    color: #fefefe;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1.6em;
+    font: inherit;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  #actions button::-moz-focus-inner {
+    border: 0;
+  }
+  #actions button:first-child {
+    margin-right: 7px;
+    background: rgb(108, 85, 249);
+    background-size: 170%;
+    border: none;
+    cursor: pointer;
+  }
+  #actions button:first-child:hover, #actions button:first-child:focus {
+    background-size: 100%;
+    background-color: rgb(69, 45, 224) !important ;
+  }
+  #actions button:last-child {
+    margin-left: 7px;
+    border: 0.1em solid rgb(108, 85, 249);
+  }
+  #actions button:last-child:hover, #actions button:last-child:focus {
+    border-color: rgba(107, 85, 249, 0.568);
+    color:rgb(108, 85, 249) !important;
+
+  }
+

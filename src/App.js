@@ -17,6 +17,8 @@ import IniciarSesion from './components/sections/IniciarSesion'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { generarToken } from './redux/actions';
+import Politicas from './components/PoliticasPrivacidad';
+import CondicionesServicio from './components/CondicionesServicio'
 
 function App() {
   const dispatch = useDispatch()
@@ -38,6 +40,8 @@ function App() {
         <Route path='/Registro' element={<Registro/>}/>
         <Route path='/inicio-sesion' element={<IniciarSesion/>}/>
         <Route path='/perfil' element={<Profile/>}/>
+        <Route path='/politicas-de-privacidad' element={<Politicas/>}/>
+        <Route path='/condiciones-del-servicio' element={<Politicas/>}/>
         
       </Routes>
       <Footer/>

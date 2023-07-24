@@ -1,0 +1,10 @@
+import React from "react";
+import svgg from '../../tools/4.svg'
+
+export default function IconUSer (){
+    return(
+        <div style={{ width: '40px' }}>
+            <img src={svgg} style={{color: 'black', width: '20px'}}/>
+        </div>
+    )
+}
