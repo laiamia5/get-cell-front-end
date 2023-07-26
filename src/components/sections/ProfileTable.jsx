@@ -3,7 +3,7 @@ import '../../styles/ProfileTable.css'
 
 export default function ProfileTable (){
     return(
-        <div style={{width: '40%'}}>
+        <div style={{maxWidth: '60%'}}>
             <section class="transfer-section">
 				<div class="transfer-section-header">
 					<h2>Latest transfers</h2>

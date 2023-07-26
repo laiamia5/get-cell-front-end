@@ -19,7 +19,7 @@ export default function Profile (){
             if(res == null) setUsuario({access: false})
             else setUsuario(res)
         })
-    }, [])
+    }, [token])
 
     const cerrarSesion = () => {
         sessionStorage.removeItem("usuario");
@@ -28,8 +28,10 @@ export default function Profile (){
     }
 
     return(
-        <div style={{marginLeft: '5%', marginTop: '80px'}}> 
-            { usuario.access == false
+		<div>
+        <div style={{marginTop: '80px', display: 'grid', gridTemplateColumns: '35% 1fr'}} > 
+
+			{ usuario.access == false
             ? <div>acceso no autorizado</div>
             :       
 			<div id="user">
@@ -47,15 +49,6 @@ export default function Profile (){
 				</div>
 				
 				<div id="information">
-					{/* <div id="stats">
-							<p>nombre : </p>
-							<p>Apellido :</p>
-							<p>DNI :</p>
-							<p>Direccion :</p>
-							<p>Telefono :</p>
-					</div> */}
-					
-					
 					<p id="description">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 					</p>
@@ -69,8 +62,36 @@ export default function Profile (){
 				</div>
 			</div>
             }
-        {/* <ProfileTable/> */}
+
+			<div class="app-header-navigation justify-center justify-items-center grid" style={{width: '100%'}}>
+				<div class="tabs">
+					<a href="#">
+						Overview
+					</a>
+					<a href="#" class="active">
+						Payments
+					</a>
+					<a href="#">
+						Cards
+					</a>
+					<a href="#">
+						Account
+					</a>
+					<a href="#">
+						System
+					</a>
+					<a href="#">
+						Business
+					</a>
+				</div>
+
+        <ProfileTable/>
+
+			</div>
+
+            
   
         </div>
+	</div>
     )
 }
