@@ -17,6 +17,7 @@ export const obtener_productos = async () => {
 export const buscar_producto_por = async (nombre, categoria) => {
     let urlSearch;
     let response;
+    console.log(nombre, categoria)
 
     if(nombre && categoria) urlSearch = `${url}/productos/buscar?nombre=${nombre}&categoria=${categoria}`
     else if(nombre && !categoria) urlSearch = `${url}/productos/buscar?nombre=${nombre}`

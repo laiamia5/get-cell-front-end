@@ -11,10 +11,12 @@ import { useState, useEffect } from "react";
 import '../styles/search.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import icon from '../tools/icon-transp.png'
+import { useLocation } from "react-router-dom";
 
 export default function Nav () {
   const [params, setParams] = useSearchParams()
   const [input, setInput] = useState('')
+  const location = useLocation()
 
   let vaciar = () =>{
     document.getElementById("busqueda").value = "";
@@ -24,6 +26,10 @@ export default function Nav () {
   let data = sessionStorage.getItem('usuario')
   console.log(data)
  },[])
+
+//  useEffect(() => {
+//   console.log(location.pathname)
+//  },[location])
 
     return(
       <div style={{marginBottom: '1%'}}>
@@ -55,20 +61,14 @@ export default function Nav () {
               <NavLink to='/contacto' style={{textDecoration:'none'}}><a class="nav-link">Contactanos</a></NavLink> 
               </li>
             </ul>
-                {/* ----------------------despues cambiarle el estilo obvs-------------------- */}
+                {/* /////////////////////////////////filtrar//////////////////////////////////////////////////////////// */}
                 
                 <div class="sample one">
                   <input type="text" name="search" class="sample_input" placeholder="buscar producto" id='busqueda' onChange={(e) => setInput(e.target.value) }/>
                   <button class="btn btn-search sample_boton"  onClick={(e) => {
-                  setParams(`?nombre=${input}`)
-                  setInput('')
-                  vaciar()
+                 params.get('categoria') ? setParams(`?categoria=${params.get('categoria')}&nombre=${input}`) : setParams(`?nombre=${input}`) 
                   }}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></button>
                 </div>
-               
-
-                
-            
           </div>
         </div>
         

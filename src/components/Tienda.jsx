@@ -2,9 +2,10 @@ import React from "react";
 import Card from './sections/Card'
 import { obtener_productos , buscar_producto_por} from "../tools/peticiones";
 import { useState, useEffect } from "react"
+import { useSearchParams } from "react-router-dom";
 import Aside from "./sections/Aside";
 // import { useLocation } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
+// import { useSearchParams } from "react-router-dom";
 
 export default function Tienda (){
   const [params] = useSearchParams()
@@ -16,9 +17,22 @@ export default function Tienda (){
   }, [])
 
   useEffect(() => {
-    buscar_producto_por(params.get('nombre')).then(async (res) =>{
+    if(params.get('categoria') && params.get('nombre')){
+      buscar_producto_por(params.get('nombre'), params.get('categoria')).then(async (res) =>{
         setData(res) 
-    })
+        setPage(0)
+      })
+    }else if(!params.get('categoria') && params.get('nombre')){
+      buscar_producto_por(params.get('nombre'), null).then(async (res) =>{
+        setData(res) 
+        setPage(0)
+      })
+    }else if(!params.get('nombre') && params.get('categoria')){
+      buscar_producto_por(null, params.get('categoria')).then(async (res) =>{
+        setData(res) 
+        setPage(0)
+      })
+    }
   }, [params])
 
   const ver = (val) => {

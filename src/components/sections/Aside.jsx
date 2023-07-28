@@ -1,8 +1,15 @@
 import React from "react";
 import '../../styles/aside.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSearchParams } from "react-router-dom";
+import {useLocation} from 'react-router-dom'
+import {useState} from 'react'
+
 
 export default function Aside (){
+  const [params, setParams] = useSearchParams()
+  const location = useLocation()
+  const [categoria, setCategoria] = useState()
 
   //esta funcion hace que el menu se desplace y muestre distintas opciones-------------------------------------
   const cambiaClase = (event) => {
@@ -20,10 +27,22 @@ export default function Aside (){
     await todos_los_list.forEach((el) => {
       if(el.classList.contains("menu-items-active")) el.classList.remove("menu-items-active")
     })
-
+  
     let elementoEvento = event.target.closest('.li_aside').classList
     if(elementoEvento.value.includes("menu-items-active")) elementoEvento.remove("menu-items-active")
     else elementoEvento.add("menu-items-active")
+
+    filtrare(event);
+  }
+
+  ///////////////////////////////filtrar////////////////////////////////////////////////////////////////
+  const filtrare = async (event) => {
+    let defineCategoria = event.target.closest('.sub-menu').querySelector('span').textContent.toLowerCase() + '+' + event.target.textContent.toLowerCase()
+    params.get('nombre') 
+    ?( 
+      setParams(`?nombre=${params.get('nombre')}&categoria=${defineCategoria}`) 
+    )
+    : setParams(`?categoria=${defineCategoria}`) 
   }
 
     return(
