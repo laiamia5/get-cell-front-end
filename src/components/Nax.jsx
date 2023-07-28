@@ -12,11 +12,13 @@ import '../styles/search.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import icon from '../tools/icon-transp.png'
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Nav () {
   const [params, setParams] = useSearchParams()
   const [input, setInput] = useState('')
   const location = useLocation()
+  const navigate = useNavigate()
 
   let vaciar = () =>{
     document.getElementById("busqueda").value = "";
@@ -64,7 +66,7 @@ export default function Nav () {
                 {/* /////////////////////////////////filtrar//////////////////////////////////////////////////////////// */}
                 
                 <div class="sample one">
-                  <input type="text" name="search" class="sample_input" placeholder="buscar producto" id='busqueda' onChange={(e) => setInput(e.target.value) }/>
+                  <input type="text" name="search" class="sample_input" placeholder="buscar producto" id='busqueda' onChange={(e) => setInput(e.target.value) } onClick={() => navigate('/tienda')}/>
                   <button class="btn btn-search sample_boton"  onClick={(e) => {
                  params.get('categoria') ? setParams(`?categoria=${params.get('categoria')}&nombre=${input}`) : setParams(`?nombre=${input}`) 
                   }}><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /></button>

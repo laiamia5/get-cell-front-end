@@ -4,8 +4,24 @@ import '../assets/css/maicons.css'
 import '../assets/css/theme.css'
 import "../assets/css/bootstrap.css"
 import "../assets/vendor/animate/animate.css"
+import { useState } from "react";
+import { enviarMail } from "../tools/peticiones";
 
 export default function Contacto (){
+  const [mensaje, setMensaje] = useState({
+    asunto: '',
+    mensaje: '',
+    email: '',
+    destino: 'empresa'
+  })
+
+  const handleForm = (propi, value) => {//setea los valores corriespondientes en el estado datos
+    let copiaDatos = mensaje
+    // delete copiaDatos.undefined
+    copiaDatos[propi] = value
+    setMensaje(copiaDatos)
+    console.log(copiaDatos)
+}
     return(
         <div className="page-section">
         <div className="container">
@@ -37,15 +53,15 @@ export default function Contacto (){
               
               <form action="#">
                 <div className="py-2">
-                  <input type="text" className="form-control" placeholder="Full name"/>
+                  <input type="text" className="form-control" placeholder="Email" name="email" onChange={(e) => handleForm(e.target.name, e.target.value)}/>
                 </div>
                 <div className="py-2">
-                  <input type="text" className="form-control" placeholder="Email"/>
+                  <input type="text" className="form-control" placeholder="asunto" name="asunto" onChange={(e) => handleForm(e.target.name, e.target.value)}/>
                 </div>
                 <div className="py-2">
-                  <textarea rows="6" className="form-control" placeholder="Enter message"></textarea>
+                  <textarea rows="6" className="form-control" placeholder="escriba el mensaje" name="mensaje" onChange={(e) => handleForm(e.target.name, e.target.value)}></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary rounded-pill mt-4">Send Message</button>
+                <button type="submit" className="btn btn-primary rounded-pill mt-4" onClick={() => enviarMail(mensaje)}>Send Message</button>
               </form>
             </div>
           </div>

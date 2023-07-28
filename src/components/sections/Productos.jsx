@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 export default function Productos (){
   const [elemento, setElemento] = useState()
   useEffect(() => {
-    obtener_productos().then((res) => setElemento(res))
+    obtener_productos().then((res) => setElemento(res.slice(0, 7)))
   }, [])
 
     return(
@@ -47,7 +47,7 @@ export default function Productos (){
         </div>
   
         <div class="text-center">
-          <a href="blog.html" class="btn btn-outline-primary rounded-pill">Discover More</a>
+          <a href="blog.html" class="btn btn-outline-primary rounded-pill">Mostrar más </a>
         </div>
       </div> 
     </div> 

@@ -93,3 +93,15 @@ export const asegurarAdmin = async (id) => {
     .catch((err) => console.log(err) )
     return respo
 }
+
+////////////////////////////ENVIAR MENSAJE A LA EMPRESA NODE MAILER///////////////////
+
+export const enviarMail = async (obj) => {
+    let respo 
+    await axios.post(`${url}/usuarios/envio-mail`, obj)
+    .then((resp) => {
+        respo = resp.data
+    })
+    .catch((err) => console.log(err) )
+    return respo
+}
