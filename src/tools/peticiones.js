@@ -78,3 +78,17 @@ export const verificarToken = async (token) => {
     .catch((err) => console.log(err) )
     return respo
 }
+
+
+//////////////////////////VER SI ES ADMIN/////////////////////////////////
+
+
+export const asegurarAdmin = async (id) => {
+    let respo 
+    await axios.get(`${url}/usuarios/esAdmin/${id}`, )
+    .then((resp) => {
+        respo = resp.data
+    })
+    .catch((err) => console.log(err) )
+    return respo
+}

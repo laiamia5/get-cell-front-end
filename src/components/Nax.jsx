@@ -10,6 +10,7 @@ import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import '../styles/search.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import icon from '../tools/icon-transp.png'
 
 export default function Nav () {
   const [params, setParams] = useSearchParams()
@@ -31,6 +32,7 @@ export default function Nav () {
     <header style={{height: '80px'}}>
       <nav class="navbar navbar-expand-lg navbar-light navbar-float barra-nav" style={{position: 'fixed'}}>
         <div class="container">
+          <img src={icon} alt="" style={{maxWidth: '40px', paddingRight: '0%'}}/>
           <a href="index.html" class="navbar-brand">Get<span  style={{color: '#6C55F9 '}}>Cell</span></a>
 
           <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,9 +73,9 @@ export default function Nav () {
         </div>
         
         <div style={{display: 'flex', marginLeft: '2%', marginRight:'2%', transform: 'translateY(-20px)'}} className="contenedor-botones-nav">
-          <button  class="btn btn-search sample_boton botones-nav botones-nav-heart">
+          {/* <button  class="btn btn-search sample_boton botones-nav botones-nav-heart">
             <FontAwesomeIcon icon="fa-solid fa-heart" />
-          </button>
+          </button> */}
           <NavLink to='/carrito' className='text-deco-none nav-link-boton'>
             <button  class="btn btn-search sample_boton botones-nav botones-nav-cart">
               <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />

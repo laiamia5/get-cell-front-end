@@ -19,6 +19,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { generarToken } from './redux/actions';
 import Politicas from './components/PoliticasPrivacidad';
 import CondicionesServicio from './components/CondicionesServicio'
+import FinalizarCompra from './components/FinalizarCompra';
 
 function App() {
   const dispatch = useDispatch()
@@ -42,6 +43,8 @@ function App() {
         <Route path='/perfil' element={<Profile/>}/>
         <Route path='/politicas-de-privacidad' element={<Politicas/>}/>
         <Route path='/condiciones-del-servicio' element={<Politicas/>}/>
+        <Route path='/carrito/finalizar-compra' element={<FinalizarCompra/>}/>
+
         
       </Routes>
       <Footer/>

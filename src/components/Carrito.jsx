@@ -5,8 +5,10 @@ import {useSelector} from 'react-redux'
 import { useEffect, useState } from "react";
 import {useDispatch} from 'react-redux'
 import { eliminar_del_carrito, alterar_cantidad } from "../redux/actions";
+import { useNavigate } from "react-router";
 
 export default function Carrito (){
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const productos = useSelector(state => state.carrito)
   const [productosDom, setProductosDom ] = useState([])
@@ -92,7 +94,9 @@ export default function Carrito (){
                       </div>
                     </ul>
                   </div>
-                  <button type="submit" class="btn btn-block boton_carrito" style={{width: '100%'}}>Realizar compra</button>
+                  <button type="submit" class="btn btn-block boton_carrito" style={{width: '100%'}} onClick={() => {
+                    productos.length === 0 ? alert('agrege productos al carrito para realizar una compra') : navigate('/carrito/finalizar-compra')
+                  }}>Realizar compra</button>
               </div>
               
               <div class="widget-box" style={{ maxWidth: '300px'}}>

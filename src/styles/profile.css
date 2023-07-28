@@ -150,3 +150,7 @@
   color: rgb(108, 85, 249);
   border-color: var(--c-text-primary);
 }
+
+.tabs > a{
+  margin-left: 10px;
+}
