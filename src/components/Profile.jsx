@@ -6,7 +6,7 @@ import { generarToken } from "../redux/actions";
 import { useNavigate } from "react-router";
 import ProfileTable from './sections/ProfileTable'
 import '../../src/styles/profile.css'
-import salir from '../../src/tools/sal.svg'
+import salir from '../../src/tools/imgs/sal.svg'
 import { asegurarAdmin } from "../tools/peticiones";
 
 export default function Profile (){

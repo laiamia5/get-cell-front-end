@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/carrito.css'
-import foto from '../tools/imagen.png'
+import foto from '../tools/imgs/imagen.png'
 import {useSelector} from 'react-redux'
 import { useEffect, useState } from "react";
 import {useDispatch} from 'react-redux'

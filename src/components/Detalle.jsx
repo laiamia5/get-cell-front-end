@@ -5,7 +5,7 @@ import { useEffect , useState} from "react";
 import { agregar_al_carrito } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import imagen from '../tools/imagen.png'
+import imagen from '../tools/imgs/imagen.png'
 import '../styles/heart-animation.css'
 
 export default function Detalle (){

@@ -1,5 +1,5 @@
 import React from "react";
-import imagen2 from '../../tools/rum.png'
+import imagen2 from '../../tools/imgs/rum.png'
 import '../../styles/carousek.css'
 
 export default function Carousel () {

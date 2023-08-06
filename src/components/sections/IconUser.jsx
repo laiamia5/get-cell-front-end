@@ -1,5 +1,5 @@
 import React from "react";
-import svgg from '../../tools/4.svg'
+import svgg from '../../tools/imgs/4.svg'
 
 export default function IconUSer (){
     return(

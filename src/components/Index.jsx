@@ -9,7 +9,7 @@ import Icon from '../components/sections/Icon'
 import Icon2 from "./sections/Icon2";
 import Icon3 from './sections/Icon3'
 import PhoneAnimation from "./sections/PhoneAnimation";
-import pic from '../tools/picback.png'
+import pic from '../tools/imgs/picback.png'
 import Fidelizar from './sections/Fidelizar'
 import NavCategorias from "./sections/NavCategorias";
 import Carousel from "./sections/Carousel";

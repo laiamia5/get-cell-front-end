@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/nav.css'
-import imagen from '../tools/transparente.png'
+import imagen from '../tools/imgs/transparente.png'
 import '../assets/css/maicons.css'
 import '../assets/css/theme.css'
 import "../assets/css/bootstrap.css"
@@ -10,7 +10,7 @@ import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import '../styles/search.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import icon from '../tools/icon-transp.png'
+import icon from '../tools/imgs/icon-transp.png'
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 

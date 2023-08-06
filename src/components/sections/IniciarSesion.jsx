@@ -7,7 +7,7 @@ import {useDispatch} from 'react-redux'
 import { Link } from "react-router-dom";
 import Icon from '../sections/IconUser'
 import IconUSer from "../sections/IconUser";
-import svgg from '../../tools/4.svg'
+import svgg from '../../tools/imgs/4.svg'
 
 export default function IniciarSesion (){
     const dispatch = useDispatch()

@@ -4,8 +4,8 @@ import '../../assets/css/maicons.css'
 import '../../assets/css/theme.css'
 import "../../assets/css/bootstrap.css"
 import "../../assets/vendor/animate/animate.css"
-import imagen from '../../tools/transparente.png'
-import imagen2 from '../../tools/imagen.png'
+import imagen from '../../tools/imgs/transparente.png'
+import imagen2 from '../../tools/imgs/imagen.png'
 import Card from './Card' 
 import {obtener_productos} from '../../tools/peticiones'
 import { useEffect, useState } from "react";

@@ -10,10 +10,11 @@ import {useNavigate} from "react-router-dom";
 import { reducir } from "../tools/peticiones";
 import Swal from 'sweetalert2'
 import '../styles/finalizarcompra.css'
-import nyancat from '../tools/nyan-cat.gif'
+import nyancat from '../tools/imgs/nyan-cat.gif'
 import { verificarToken } from "../tools/peticiones";
 import { UseSelector } from "react-redux/es/hooks/useSelector";
-import { controlar_form } from "../tools/form-controller";
+import { controlarFormulario} from "../tools/form-controller";
+import { procesarCompra } from "../tools/peticiones-ll";
 
 export default function FinalizarCompra (){
     const dispatch = useDispatch()
@@ -25,28 +26,32 @@ export default function FinalizarCompra (){
     useEffect(() => {
         reducir(productos).then((res) => setTotal(res))
 
-        Swal.fire({
-            icon: "question",
-            showCancelButton: true,
-            cancelButtonText:'no',
-            confirmButtonText: 'si',
-            title: 'Desea rellenar el formulario con los datos de su perfil?',
-            showClass: {
-              popup: 'animate__animated animate__fadeInDown'
-            },
-            hideClass: {
-              popup: 'animate__animated animate__fadeOutUp'
-            }
-          })
-          .then((result) => {
-            if (result.isConfirmed) {
-                traerDatos()
-            } else {
-            }
-          })
+/////////////////////////////// ALERTA PARA PREGUNTAR SI DESEA TRAER LOS DATOS DE SU PERFIL ///////////////////////////
+        let todos_inputs = document.querySelectorAll('.form-control')[0]
+        console.log(todos_inputs.value)
+        if(todos_inputs.value == ''){
+            Swal.fire({
+                icon: "question",
+                showCancelButton: true,
+                cancelButtonText:'no',
+                confirmButtonText: 'si',
+                title: 'Desea rellenar el formulario con los datos de su perfil?',
+                showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+                }
+              })
+              .then((result) => {
+                if (result.isConfirmed) {
+                    traerDatos()
+                } 
+              })
+        }
     }, [])
   
- 
+ /////////////////////////////trae los datos del perfil del usuario en caso de querer rellenar los campos///////////////////
     const traerDatos = () => {
         verificarToken(token).then((res) => {
             let todos_inputs = document.querySelectorAll('.form-control')
@@ -56,6 +61,8 @@ export default function FinalizarCompra (){
         })   
     }
 
+ /////////////////////////////CONTROLA EL FORMULARIO Y VERIFICA EL MEDIO DE PAGO/////////////////////////////////////////////////
+
     const handleForm = () => {
         let todos_inputs = document.querySelectorAll('.form-control')
         let ob = {}
@@ -63,7 +70,44 @@ export default function FinalizarCompra (){
             ob[e.name] = e.value
         })
         delete ob.undefined
-        controlar_form(ob)
+        controlarFormulario(ob).then((res) => {
+            if(res !== true){
+                toast.error(res, {
+                    position: toast.POSITION.TOP_RIGHT
+                })
+            }else{
+                let botones = document.querySelectorAll('.custom-control-input')
+                let array = []
+                botones.forEach((e) => array.push(e.checked))
+                    if(array.includes(true)){
+                        Swal.fire({
+                            title: 'Su compra se realizo exitosamente! ',
+                            text: 'Podra ver el seguimiento del pedido en su perfil',
+                            width: 600,
+                            padding: '3em',
+                            color: '#716add',
+                            background: '#fff url(/images/trees.png)',
+                            backdrop: `
+                                rgba(0,0,123,0.4)
+                                url(${nyancat})
+                                left bottom
+                                no-repeat
+                            `,
+                            }) 
+                            completarCompra()
+                    }else{
+                        toast.error('seleccione un medio de pago', {
+                            position: toast.POSITION.TOP_RIGHT
+                        })
+                    }
+            }
+        })
+    }
+
+    const completarCompra = () => {
+        // verificarToken(token).then((res) =>{ 
+        //     procesarCompra(productos, res.id, 'transferencia bancaria')
+        // })
     }
 
     return(
@@ -217,20 +261,7 @@ export default function FinalizarCompra (){
                                              
                           
                             <button class="btn  boton_carrito botonfinalizar" onClick={(e) =>{
-                                Swal.fire({
-                                title: 'Su compra se realizo exitosamente! ',
-                                text: 'Podra ver el seguimiento del pedido en su perfil',
-                                width: 600,
-                                padding: '3em',
-                                color: '#716add',
-                                background: '#fff url(/images/trees.png)',
-                                backdrop: `
-                                    rgba(0,0,123,0.4)
-                                    url(${nyancat})
-                                    left bottom
-                                    no-repeat
-                                `,
-                                }) 
+                               
                                 handleForm()
                                 }} style={{width: '90%', marginLeft: '5%', marginBottom: '3%',backgroundColor: 'rgb(108, 85, 249)' , cursor: 'pointer'}}>Realizar Compra</button>
 
