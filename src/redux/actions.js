@@ -4,6 +4,7 @@ export const DISMINUIR_CANTIDAD = 'DISMINUIR_CANTIDAD'
 export const FINALIZAR_Y_VACIAR = 'FINALIZAR_Y_VACIAR'
 export const ALTERAR_CANTIDAD = 'ALTERAR_CANTIDAD'
 export const GENERAR_TOKEN = 'GENERAR_TOKEN'
+export const GUARDAR_CUPON = 'GUARDAR_CUPON'
 
 export const agregar_al_carrito = (obj) => async (dispatch) => {
     let newOb = {
@@ -31,4 +32,8 @@ export const alterar_cantidad = (id, cantidad) => async (dispatch) => {
 
 export const generarToken = (token) => async (dispatch) => {
     return dispatch({type: GENERAR_TOKEN , payload: token})
+}
+
+export const guardarCupon = (cupon) => async (dispatch) => {
+    return dispatch({type: GUARDAR_CUPON, payload: cupon})
 }

@@ -14,10 +14,10 @@ export default function Aside (){
   //esta funcion hace que el menu se desplace y muestre distintas opciones-------------------------------------
   const cambiaClase = (event) => {
     let elemento = event.target.closest('.sub-menu').classList.value
-    if(elemento === 'sub-menu'){
+    if(elemento === 'sub-menu inactive' || elemento === 'sub-menu'){
       event.target.closest('.sub-menu').classList.value = 'sub-menu active'
     }else{
-      event.target.closest('.sub-menu').classList.value = 'sub-menu'
+      event.target.closest('.sub-menu').classList.value = 'sub-menu inactive'
     }
   }
   //esta funcion cambia la clase active que simboliza el pequeño indice al costado de el sub menu-----------------

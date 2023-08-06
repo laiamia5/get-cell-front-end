@@ -38,10 +38,18 @@ export default function IniciarSesion (){
                 <div className="py-2">
                   <input className="form-control" type='password' placeholder="🔒︎ Contraseña"  name='contraseña' onChange={(e) => setear(e.target.name, e.target.value)}/>
                 </div>
-                <button onClick={() => iniciarSesionCon(loguearUsuario).then((res) => {
-                setResponse(res)
-                typeof res === 'object' ? dispatch(generarToken(res.token)) : alert('usuario o contraseña incorrecto')
-                })}
+                <button onClick={() => 
+                loguearUsuario.email && loguearUsuario.contraseña
+                ?  iniciarSesionCon(loguearUsuario).then((res) => {
+                  if(typeof res === 'object'){
+                    dispatch(generarToken(res.token))
+                    setResponse(res)
+                  }else{
+                    alert('usuario o contraseña incorrecto')
+                  }
+                  })
+                : alert('debe ingresar usuario y contraseña')
+                }
                 className="btn mt-4 boton_carrito"
                 style={{ width: '80%', marginRight:'10%', marginLeft: '10%' }}
                 type='button'>

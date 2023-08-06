@@ -20,6 +20,7 @@ import { generarToken } from './redux/actions';
 import Politicas from './components/PoliticasPrivacidad';
 import CondicionesServicio from './components/CondicionesServicio'
 import FinalizarCompra from './components/FinalizarCompra';
+import Faq from './components/Faq'
 
 function App() {
   const dispatch = useDispatch()
@@ -42,10 +43,9 @@ function App() {
         <Route path='/inicio-sesion' element={<IniciarSesion/>}/>
         <Route path='/perfil' element={<Profile/>}/>
         <Route path='/politicas-de-privacidad' element={<Politicas/>}/>
-        <Route path='/condiciones-del-servicio' element={<Politicas/>}/>
+        <Route path='/condiciones-del-servicio' element={<CondicionesServicio/>}/>
         <Route path='/carrito/finalizar-compra' element={<FinalizarCompra/>}/>
-
-        
+        <Route path='/faq' element={<Faq/>}/>
       </Routes>
       <Footer/>
     </div>

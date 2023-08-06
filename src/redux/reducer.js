@@ -4,17 +4,22 @@ import {
     FINALIZAR_Y_VACIAR,
     DISMINUIR_CANTIDAD,
     ALTERAR_CANTIDAD,
-    GENERAR_TOKEN
+    GENERAR_TOKEN,
+    GUARDAR_CUPON
 } from './actions'
 
 const initialState = {
     carrito: [],
-    token : ''
+    token : '',
+    cupon: ''
 }
+
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type){
         case AGREGAR_AL_CARRITO :
+            localStorage.setItem('carrito', JSON.stringify(state.carrito))
             let encuentro = state.carrito.find((e) => e.id === action.payload.id)
             if(encuentro){
                 encuentro.cantidad ++
@@ -54,6 +59,11 @@ const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 token: action.payload
+            }
+        case GUARDAR_CUPON:
+            return{
+                ...state,
+                cupon: action.payload
             }
         default : 
             return state

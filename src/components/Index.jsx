@@ -11,18 +11,24 @@ import Icon3 from './sections/Icon3'
 import PhoneAnimation from "./sections/PhoneAnimation";
 import pic from '../tools/picback.png'
 import Fidelizar from './sections/Fidelizar'
+import NavCategorias from "./sections/NavCategorias";
+import Carousel from "./sections/Carousel";
 
 
 export default function Index () {
     
     return(
     <div className="fondo icons-violet" >
+        
+        <NavCategorias/>
+
+
         <div class="page-banner home-banner fondo">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
                 <div class="col-lg-6 py-3 wow fadeInUp">
-                    <h1 class="mb-4">Great Companies are built on great Products</h1>
-                    <p class="text-lg mb-5">Ignite the most powerfull growth engine you have ever built for your company</p>
+                    <h1 class="mb-4">Las grandes empresas se basan en grandes productos</h1>
+                    <p class="text-lg mb-5">Get Cell: Tu mejor aliado tecnológico. Compra, vende y renueva, siempre un paso hacia el futuro</p>
 
                     <a href="#" class="btn btn-outline border text-secondary">More Info</a>
                 </div>
@@ -34,9 +40,12 @@ export default function Index () {
                 </div>
                 </div>
             </div>
-            </div>
+        </div>
 {/* arreglar el responsive de los iconos */}
-            <div class="page-section features">
+<Carousel/>
+<Productos/>
+
+        <div class="page-section features">
             <div class="container">
                     <div class="row justify-content-around">
                     <Icon2></Icon2>
@@ -82,8 +91,7 @@ export default function Index () {
                 </div>
             </div> 
         </div>   
-
-        <Productos/>
+       
         {/* <PhoneAnimation/> */}
         <Fidelizar/>
     </div>

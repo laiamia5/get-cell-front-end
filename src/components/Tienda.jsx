@@ -51,7 +51,7 @@ export default function Tienda (){
         <>
         <Aside/>
   <main style={{marginLeft: '250px'}}>
-    <div class="page-section">
+    <div class="page-section" style={{minHeight: '600px'}}>
       <div class="container">
 {/* ----------------------------------- si no encuentra nada--------------------------- */}
           <div class="pagination justify-content-center">

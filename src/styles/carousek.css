@@ -1,0 +1,15 @@
+.carrusel2::-webkit-scrollbar {
+    width: 5px; 
+    height: 7px;
+    color: black
+}
+
+.carrusel2::-webkit-scrollbar-thumb {
+    background-color: rgb(228, 228, 228);  
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  }
+
+  .carrusel2 div img:hover{
+    transform: translateY(-5px);
+    transition: .5s;
+  }

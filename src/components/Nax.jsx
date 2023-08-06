@@ -50,17 +50,29 @@ export default function Nav () {
           <div class="navbar-collapse collapse" id="navbarContent">
             <ul class="navbar-nav ml-lg-4 pt-3 pt-lg-0">
               <li class="nav-item active">
-               <NavLink to='/' style={{textDecoration:'none'}} ><a  class="nav-link" >Inicio</a></NavLink> 
+               <NavLink to='/' style={{textDecoration:'none'}} >
+                  <a  class="nav-link" >
+                    Inicio <FontAwesomeIcon icon="fa-solid fa-house" />
+                  </a>
+                </NavLink> 
               </li>
               <li class="nav-item">
-              <NavLink to='/tienda'  style={{textDecoration:'none'}}><a  class="nav-link">Tienda</a></NavLink> 
+              <NavLink to='/tienda'  style={{textDecoration:'none'}}>
+                <a  class="nav-link">
+                  Tienda <FontAwesomeIcon icon="fa-solid fa-store" />
+                </a>
+              </NavLink> 
               {/* <div style={{width: '50px', height: '1px', background: 'rgb(108, 85, 249)', position: 'absolute'}}></div> */}
               </li>
-              <li class="nav-item">
+              {/* <li class="nav-item">
                 <a class="nav-link">Servicios</a>
-              </li>
+              </li> */}
               <li class="nav-item">
-              <NavLink to='/contacto' style={{textDecoration:'none'}}><a class="nav-link">Contactanos</a></NavLink> 
+                <NavLink to='/contacto' style={{textDecoration:'none'}}>
+                  <a class="nav-link">
+                    Contactanos <FontAwesomeIcon icon="fa-solid fa-user-group" />
+                  </a>
+                </NavLink> 
               </li>
             </ul>
                 {/* /////////////////////////////////filtrar//////////////////////////////////////////////////////////// */}
@@ -91,12 +103,9 @@ export default function Nav () {
         </div>
 
                 
-
-        
+       
         
       </nav>
-
-    
     </header>
       </div>
     )

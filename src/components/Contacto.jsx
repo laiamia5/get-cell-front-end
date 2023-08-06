@@ -27,28 +27,28 @@ export default function Contacto (){
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 py-3 wow fadeInUp">
-              <h2 className="title-section">Get in Touch</h2>
+              <h2 className="title-section">Nuestros contactos</h2>
               <div className="divider"></div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br/> Laborum ratione autem quidem veritatis!</p>
+              <p>por cualquier inquietud, consulta o problema <br/> puede mantenerse en contacto con nosotros!</p>
     
               <ul className="contact-list">
                 <li>
                   <div className="icon"><span className="mai-map"></span></div>
-                  <div className="content">123 Fake Street, New York, USA</div>
+                  <div className="content">Buenos Aires, Pilar</div>
                 </li>
                 <li>
                   <div className="icon"><span className="mai-mail"></span></div>
-                  <div className="content"><a href="#">info@digigram.com</a></div>
+                  <div className="content"><a href="#">getcell.original@gmail.com</a></div>
                 </li>
                 <li>
                   <div className="icon"><span className="mai-phone-portrait"></span></div>
-                  <div className="content"><a href="#">+00 1122 3344 55</a></div>
+                  <div className="content"><a href="#">+54 9 11 5644 9259</a></div>
                 </li>
               </ul>
             </div>
             <div className="col-lg-6 py-3 wow fadeInUp">
-              <div className="subhead">Contact Us</div>
-              <h2 className="title-section">Drop Us a Line</h2>
+              <div className="subhead">Contactanos</div>
+              <h2 className="title-section">Dejanos tu mensaje!</h2>
               <div className="divider"></div>
               
               <form action="#">

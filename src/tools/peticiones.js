@@ -105,3 +105,28 @@ export const enviarMail = async (obj) => {
     .catch((err) => console.log(err) )
     return respo
 }
+
+
+/////////////////////subscribirse//////////////////////////////////////
+
+export const subscribirse = async (obj) => {
+    let respo 
+    await axios.post(`${url}/subscribe`, obj)
+    .then((resp) => {
+        respo = resp.data
+    })
+    .catch((err) => console.log(err) )
+    return respo
+}
+
+//////////////////ver que no este vacio ////////////////////////////
+
+export const isEmpty = async (txt) => {
+    if(txt.length === 0) return false
+    else return true
+}
+
+export const reducir = async (obj) => {
+    let cuenta = await obj.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)
+    return cuenta
+}

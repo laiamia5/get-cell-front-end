@@ -18,7 +18,7 @@ export default function Productos (){
 
     return(
         <>
-         <div class="page-section border-top">
+         <div class="page-section ">
           <div class="container">
             <div class="text-center wow fadeInUp">
               <div class="subhead">Nuestro stock</div>

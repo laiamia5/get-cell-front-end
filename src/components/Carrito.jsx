@@ -6,27 +6,41 @@ import { useEffect, useState } from "react";
 import {useDispatch} from 'react-redux'
 import { eliminar_del_carrito, alterar_cantidad } from "../redux/actions";
 import { useNavigate } from "react-router";
+import { isEmpty } from "../tools/peticiones";
+import { reducir } from "../tools/peticiones";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import store  from "../redux/store";
 
 export default function Carrito (){
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const productos = useSelector(state => state.carrito)
-  const [productosDom, setProductosDom ] = useState([])
+  const logueo = useSelector(state => state.token)
+  const [total, setTotal] = useState(0)
+  const [envio, setEnvio] = useState(0)
 
   useEffect(() => {
-    setProductosDom(productos)
+    reducir(productos).then((res) => setTotal(res))
+    modificarEnvio()
   }, [productos])
+
+  const modificarEnvio = () => {
+    let todos_los_input = document.querySelectorAll('.carrito_input_number')
+    let result = 0
+    todos_los_input.forEach((res) => result += Number(res.value))
+    productos.length === 0 || result >= 3 ? setEnvio(0) : setEnvio(1500)
+  }
 
     return(
       <div style={body}>
         <div id="app" className="columnas">
           <section class="container_carrito" style={container}>
-              <div v-if="products.length > 0">
+              <div >
                   <ul class="products carrito_ul" style={{...carrito_ul, ...products}}>
                     {
-                      productosDom.length !== 0 ?
-                    productosDom.map((e) => {
-                      return(<li  v-for="(product, index) in products" style={{...row, ...products_li}}>
+                      productos.length !== 0 ?
+                    productos.map((e, index) => {
+                      return(<li  v-for="(product, index) in products" style={{...row, ...products_li}} key={index}>
                           <div class="left" style={{...col_left, ...float_left}}>
                               <div class="thumbnail">
                               <a  style={carrito_a} className="carrito_a">
@@ -42,7 +56,17 @@ export default function Carrito (){
 
                           <div class="right" style={{...col_right, ...float_left}}>
                               <div class="quantity" style={{...quantityRemove, ...float_left}}>
-                              <input type="number" defaultValue={e?.cantidad} onBlur={(el) => dispatch(alterar_cantidad(e.id, el.target.value))} class="quantity carrito_input carrito_input_number" step="1" style={{...carrito_input, ...float_left, ...quantityRemove, ...quantityInput}} />
+                              <input type="number" defaultValue={e?.cantidad !== 0 ? e?.cantidad : 1} onBlur={(el) =>{
+                                modificarEnvio() 
+                               if( el.target.value != 0 ){ 
+                                dispatch(alterar_cantidad(e.id, el.target.value))
+                              }
+                               else{
+                                alert('debe ingresar un valor distinto a 0')
+                                dispatch(alterar_cantidad(e.id, 1))
+                                el.target.value = 1
+                               } 
+                                }} class="quantity carrito_input carrito_input_number" step="1" style={{...carrito_input, ...float_left, ...quantityRemove, ...quantityInput}} />
                               </div>
                               
                               <div class="remove" onClick={() => dispatch(eliminar_del_carrito(e.id))} style={{...float_left, ...quantityRemove}}>
@@ -69,6 +93,10 @@ export default function Carrito (){
               </div>
             </section>
             <div>
+            <div class="widget-box" style={{maxWidth: '300px', marginBottom: '5px', marginTop: '7px', display:'flex', padding:'5px'}}> 
+            <FontAwesomeIcon icon="fa-solid fa-circle-exclamation" style={{color: 'rgb(108, 85, 249)', marginTop: '5px', marginRight: '3px'}}/>
+            <p style={{fontSize:'14px', marginTop: '3px'}}>Llevas 3 productos y el envío es <strong style={{color: 'rgb(108, 85, 249)'}}>gratis</strong> </p>
+            </div>
               <div class="widget-box" style={{maxWidth: '300px', marginRight: '5%', marginTop: '5%'}}>
                   <h4 class="widget-title">Resumen </h4>
                   <div class="divider">
@@ -77,32 +105,38 @@ export default function Carrito (){
                     <ul className="carrito_ul" style={carrito_ul}>
                       <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
                         <li style={summaryList}>Subtotal </li>
-                        <span style={{...summaryList, marginLeft:'45%'}}>$8000</span>
+                        <span style={{...summaryList, marginLeft:'45%'}}>$ {productos.length ? total : 0}</span>
                       </div>
                       <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
                         <li style={summaryList} v-if="discount > 0">Descuento</li>
-                        <span style={{...summaryList, marginLeft:'45%'}}>$660</span>
+                        <span style={{...summaryList, marginLeft:'45%'}}>$0</span>
                       </div>
                       <div style={{display: 'grid',  gridTemplateColumns: '20% 80%' }}>
                         <li style={summaryList}>Envío</li>
-                        <span style={{...summaryList, marginLeft:'45%'}}>$50</span>
+                        <span style={{...summaryList, marginLeft:'45%'}}>${envio}</span>
                       </div>
                       <hr />
                       <div style={{display: 'grid',  gridTemplateColumns:'20% 80%' }}>
                         <li style={{...summaryListTotal, ...summaryList}} class="total">Total</li>
-                        <span style={{...summaryList, fontWeight: 'bold'}}>$400</span>
+                        <span style={{...summaryList, fontWeight: 'bold'}}>${total + envio}</span>
                       </div>
                     </ul>
                   </div>
                   <button type="submit" class="btn btn-block boton_carrito" style={{width: '100%'}} onClick={() => {
-                    productos.length === 0 ? alert('agrege productos al carrito para realizar una compra') : navigate('/carrito/finalizar-compra')
+                    productos.length === 0 
+                    ? alert('agrege productos al carrito para realizar una compra') 
+                    : isEmpty(logueo).then((res) => {
+                      res === true
+                      ? navigate('/carrito/finalizar-compra')
+                      : alert('debe registrarse para realizar la compra')
+                    }) 
                   }}>Realizar compra</button>
               </div>
               
               <div class="widget-box" style={{ maxWidth: '300px'}}>
                 <form action="#" class="search-widget">
                   <input type="text" class="form-control" placeholder="Cupón de descuento"/>
-                  <button class="btn btn-block boton_carrito" style={{textTransform: 'lowercase'}}>Aplicar</button>
+                  <button type="button" class="btn btn-block boton_carrito" style={{textTransform: 'lowercase'}}>Aplicar</button>
                 </form>
               </div>
             </div>
