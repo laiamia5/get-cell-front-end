@@ -130,3 +130,6 @@ export const reducir = async (obj) => {
     let cuenta = await obj.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0)
     return cuenta
 }
+
+//////////////////traer datos del perfil ////////////////////////////
+
