@@ -5,3 +5,9 @@
         background-size: 7%;
         /* background-color: rgba(48, 17, 226, 0.048); */
     }
+
+    @media all and (max-width: 440px) {
+        .fondo{
+            background-size: 30%;
+        }
+    }

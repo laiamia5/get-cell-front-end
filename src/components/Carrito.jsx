@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/carrito.css'
+import '../styles/responsive.css'
 import foto from '../tools/imgs/imagen.png'
 import {useSelector} from 'react-redux'
 import { useEffect, useState } from "react";
@@ -49,7 +50,7 @@ export default function Carrito (){
                               </div>
                               <div class="detail" style={detail}>
                                 <div class="name" style={name}><a style={carrito_a} className="carrito_a">{e.nombre}</a></div>
-                                <div class="description" style={description}>{e.descripcion}</div>
+                                <div class="description responsive-carrito-descripcion" style={description}>{e.descripcion}</div>
                                 <div class="price" style={price}>${e.precio}</div>
                               </div>
                           </div>
@@ -92,12 +93,12 @@ export default function Carrito (){
                   </ul>
               </div>
             </section>
-            <div>
-            <div class="widget-box" style={{maxWidth: '300px', marginBottom: '5px', marginTop: '7px', display:'flex', padding:'5px'}}> 
-            <FontAwesomeIcon icon="fa-solid fa-circle-exclamation" style={{color: 'rgb(108, 85, 249)', marginTop: '5px', marginRight: '3px'}}/>
-            <p style={{fontSize:'14px', marginTop: '3px'}}>Llevas 3 productos y el envío es <strong style={{color: 'rgb(108, 85, 249)'}}>gratis</strong> </p>
+            <div className="responsive-carrito-contenedor">
+            <div class="widget-box responsive-carrito-div" style={{maxWidth: '300px', marginBottom: '5px', marginTop: '7px', display:'flex', padding:'5px'}}> 
+            <FontAwesomeIcon className="responsive-carrito-icon" icon="fa-solid fa-circle-exclamation" style={{color: 'rgb(108, 85, 249)', marginTop: '5px', marginRight: '3px'}}/>
+            <p className="responsive-carrito-p" style={{fontSize:'14px', marginTop: '3px'}}>Llevas 3 productos y el envío es <strong style={{color: 'rgb(108, 85, 249)'}}>gratis</strong> </p>
             </div>
-              <div class="widget-box" style={{maxWidth: '300px', marginRight: '5%', marginTop: '5%'}}>
+              <div class="widget-box responsive-carrito-div" style={{maxWidth: '300px', marginRight: '5%', marginTop: '5%'}}>
                   <h4 class="widget-title">Resumen </h4>
                   <div class="divider">
                   </div>
@@ -133,7 +134,7 @@ export default function Carrito (){
                   }}>Realizar compra</button>
               </div>
               
-              <div class="widget-box" style={{ maxWidth: '300px'}}>
+              <div class="widget-box responsive-carrito-div" style={{ maxWidth: '300px'}}>
                 <form action="#" class="search-widget">
                   <input type="text" class="form-control" placeholder="Cupón de descuento"/>
                   <button type="button" class="btn btn-block boton_carrito" style={{textTransform: 'lowercase'}}>Aplicar</button>

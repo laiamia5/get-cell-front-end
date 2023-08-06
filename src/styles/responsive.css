@@ -1,0 +1,36 @@
+/* //////////////////////////////////////////////carrito responsive//////////////////////////////////////// */
+
+@media all and (max-width: 767px) {
+    .responsive-carrito-div{
+        max-width: 90% !important;
+    }
+
+    .responsive-carrito-contenedor{
+        max-width: 90%;
+        width: 90%;
+        margin-left: 10%;
+    }
+
+    .responsive-carrito-p{
+        font-size: 16px !important;
+        padding: 5px;
+    }
+
+    .responsive-carrito-icon{
+        font-size: 20px !important;
+        padding: 5px;
+    }
+
+    .responsive-carrito-descripcion{
+        display: none !important;
+    }
+
+}
+
+/* /////////////////////////////////////////registro////////////////////////////////// */
+
+@media all and (max-width: 440px) {
+    .responsive-registro-contenedor{
+        padding: 5%;
+    }
+}

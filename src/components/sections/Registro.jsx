@@ -15,7 +15,7 @@ export default function Registro (){
     }
 
     return (
-            <div style={{display: 'flex', justifyContent: 'center' }} className="fondo">
+            <div style={{display: 'flex', justifyContent: 'center' }} className="fondo responsive-registro-contenedor">
                 <div className="align-items-center justify-content-center">
                     <div className=" py-5">
                     <div className="subhead">Cuentas</div>
