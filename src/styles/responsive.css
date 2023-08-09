@@ -34,3 +34,18 @@
         padding: 5%;
     }
 }
+
+
+/* /////////////////////////////////////CATALOGO///////////////////////////////////// */
+
+
+
+@media all and (max-width: 1100px) {
+    .responsive-contenedor-catalogo{
+        grid-template-columns: 100% 0 !important;
+    }
+
+    .responsive-cont-catalogo{
+        display: none;
+    }
+}

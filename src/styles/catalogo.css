@@ -1,0 +1,34 @@
+.catalogo-div:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.catalogo-div{
+    transition: .4s;
+}
+
+.responsive-contenedor-catalogo div > p{
+    position: absolute;
+    color: black;
+    z-index: 999;
+    display: none;
+    transition: .4s;
+}
+
+.responsive-contenedor-catalogo div:hover > p{
+    position: absolute;
+    display: block;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
+    color: black;
+}
+
+/* @keyframes animation-catalogo{
+    to{
+        transform: ;
+    }
+    from{
+
+    }
+} */

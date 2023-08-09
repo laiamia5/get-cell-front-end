@@ -18,13 +18,13 @@ export default function Productos (){
 
     return(
         <>
-         <div class="page-section ">
+         <div class="page-section " style={{paddingTop: '0'}}>
           <div class="container">
-            <div class="text-center wow fadeInUp">
+            {/* <div class="text-center wow fadeInUp">
               <div class="subhead">Nuestro stock</div>
               <h2 class="title-section">nuevo ingreso de <span class="marked">Productos</span></h2>
               <div class="divider mx-auto"></div>
-            </div>
+            </div> */}
             <div class="row my-5 card-blog-row">
               <div class="col-md-6 col-lg-3 py-3 wow fadeInUp">
                 <div class="card-blog">

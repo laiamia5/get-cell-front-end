@@ -13,6 +13,7 @@ import pic from '../tools/imgs/picback.png'
 import Fidelizar from './sections/Fidelizar'
 import NavCategorias from "./sections/NavCategorias";
 import Carousel from "./sections/Carousel";
+import Catalogo from "./sections/Catalogo";
 
 
 export default function Index () {
@@ -93,6 +94,8 @@ export default function Index () {
         </div>   
        
         {/* <PhoneAnimation/> */}
+        <Catalogo/>
+
         <Fidelizar/>
     </div>
     )
