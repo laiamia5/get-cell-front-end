@@ -1,6 +1,10 @@
-.catalogo-div:hover{
-    opacity: 0.5;
+.catalogo-div:hover > img{
+    opacity: 0.4;
     cursor: pointer;
+}
+
+.catalogo-div > img{
+    transition: 0.5s;
 }
 
 .catalogo-div{
@@ -13,6 +17,8 @@
     z-index: 999;
     display: none;
     transition: .4s;
+    animation-name: animation-catalogo;
+    animation-duration: 0.7s;
 }
 
 .responsive-contenedor-catalogo div:hover > p{
@@ -24,11 +30,14 @@
     color: black;
 }
 
-/* @keyframes animation-catalogo{
-    to{
-        transform: ;
-    }
-    from{
+@keyframes animation-catalogo{
 
+    from{
+        transform: translateY(-100px) ;
+        opacity: 0;
     }
-} */
+    to{
+        transform: translateY(0) ;
+        opacity: 1;
+    }
+}

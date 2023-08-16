@@ -20,10 +20,7 @@ export default function Index () {
     
     return(
     <div className="fondo icons-violet" >
-        
         <NavCategorias/>
-
-
         <div class="page-banner home-banner fondo">
             <div class="container h-100">
                 <div class="row align-items-center h-100">
@@ -44,6 +41,9 @@ export default function Index () {
         </div>
 {/* arreglar el responsive de los iconos */}
 <Carousel/>
+
+<Catalogo/>
+
 <Productos/>
 
         <div class="page-section features">
@@ -94,7 +94,6 @@ export default function Index () {
         </div>   
        
         {/* <PhoneAnimation/> */}
-        <Catalogo/>
 
         <Fidelizar/>
     </div>

@@ -27,7 +27,7 @@
     transition: all 200ms linear;
     position: fixed;
     width: 150px;
-    height: 13%;
+    height: 70px;
     animation-name: animacion;
     animation-duration: .3s;
     display: block;

@@ -13,26 +13,26 @@ export default function Carousel () {
                 </div>
             </div> */}
 
-        <div style={{width: '100%', background: 'white'}}>
-        <div className="carrusel2" style={{overflowX: 'scroll', overflowY: 'hidden' ,height: '160px',  marginLeft: '10%', marginRight: '10%', display: 'flex', backgroundColor:'white',  justifyContent: 'center'}}>
-            <div style={{backgroundColor:'#f9f9f9', width: '160px', minWidth: '160px', borderRadius: '25px', marginLeft: '20px'}}>
+        <div className="carrusel2" style={{width: '100%', background: 'white', overflowX: 'scroll', overflowY: 'hidden'}}>
+        <div  style={{ height: '160px',  marginLeft: '10%', marginRight: '10%', display: 'flex', backgroundColor:'white',  justifyContent: 'center'}}>
+            <div className="carrusel_self_div" style={{backgroundColor:'#f9f9f9', width: '160px', minWidth: '160px', borderRadius: '25px', marginLeft: '20px'}}>
                 <img src={imagen2} alt="" style={{width: '80%', marginLeft: '10%'}}/>
                 <p style={{backgroundColor: 'white',justifyContent: 'center', display: 'flex'}}>celulares</p>
             </div>
 
-            <div style={{backgroundColor:'#f9f9f9', width: '160px', minWidth: '160px', borderRadius: '25px', marginLeft: '20px'}}>
+            <div className="carrusel_self_div" style={{backgroundColor:'#f9f9f9', width: '160px', minWidth: '160px', borderRadius: '25px', marginLeft: '20px'}}>
                 <img src={imagen2} alt="" style={{width: '80%', marginLeft: '10%'}}/>
                 <p style={{backgroundColor: 'white',justifyContent: 'center', display: 'flex'}}>celulares</p>
             </div>
-            <div style={{backgroundColor:'#f9f9f9', width: '160px', minWidth: '160px', borderRadius: '25px', marginLeft: '20px'}}>
+            <div className="carrusel_self_div" style={{backgroundColor:'#f9f9f9', width: '160px', minWidth: '160px', borderRadius: '25px', marginLeft: '20px'}}>
                 <img src={imagen2} alt="" style={{width: '80%', marginLeft: '10%'}}/>
                 <p style={{backgroundColor: 'white',justifyContent: 'center', display: 'flex'}}>celulares</p>
             </div>
-            <div style={{backgroundColor:'#f9f9f9', width: '160px', minWidth: '160px', borderRadius: '25px', marginLeft: '20px'}}>
+            <div className="carrusel_self_div" style={{backgroundColor:'#f9f9f9', width: '160px', minWidth: '160px', borderRadius: '25px', marginLeft: '20px'}}>
                 <img src={imagen2} alt="" style={{width: '80%', marginLeft: '10%'}}/>
                 <p style={{backgroundColor: 'white',justifyContent: 'center', display: 'flex'}}>celulares</p>
             </div>
-            <div style={{backgroundColor:'#f9f9f9', width: '160px', minWidth: '160px', borderRadius: '25px', marginLeft: '20px'}}>
+            <div className="carrusel_self_div" style={{backgroundColor:'#f9f9f9', width: '160px', minWidth: '160px', borderRadius: '25px', marginLeft: '20px'}}>
                 <img src={imagen2} alt="" style={{width: '80%', marginLeft: '10%'}}/>
                 <p style={{backgroundColor: 'white',justifyContent: 'center', display: 'flex'}}>celulares</p>
             </div>

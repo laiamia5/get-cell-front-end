@@ -9,7 +9,16 @@
     border-radius: 20px;       /* roundness of the scroll thumb */
   }
 
-  .carrusel2 div img:hover{
-    transform: translateY(-5px);
-    transition: .5s;
-  }
+
+
+
+ .carrusel_self_div:hover{
+  transform: translateY(-5px);
+  transition: .5s;
+  z-index: 99999;
+}
+
+
+
+
+  
