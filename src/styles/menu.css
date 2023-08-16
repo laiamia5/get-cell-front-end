@@ -193,9 +193,9 @@
   }
   
 
-  @media all and (max-width: 992px) {
+  @media all and (max-width: 991px) {
     .body_menu{
-        display: block !important;
+        display: flex !important;
     }
 }
 

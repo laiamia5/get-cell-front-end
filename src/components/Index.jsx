@@ -55,7 +55,6 @@ export default function Index () {
         <Carousel />
         <Fidelizar/>
 
-        <Menu/>
     </div>
     )
 }
