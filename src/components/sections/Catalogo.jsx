@@ -11,7 +11,7 @@ export default function Catalogo () {
     return(
         <>
         <div className="responsive-contenedor-catalogo" style={{display: 'grid', gridTemplateColumns: '30% 70%', width:'90%', height: '80vh', gridColumnGap: '10px', marginLeft: '5%', marginRight: '5%'}}>
-            <div className="responsive-cont-catalogo catalogo-div" style={{background: 'rgb(249 249 249)'}} >
+            <div className="responsive-cont-catalogo catalogo-div" style={{background: 'rgb(249 249 249)', overflow:"hidden"}} >
                 <p style={{ background: 'rgb(108, 85, 249)',color: 'white', border: 'none',margin: '15% 6%', padding: '0.5% 1%'}} ><FontAwesomeIcon icon="fa-solid fa-magnifying-glass" /> ver en la tienda </p>
                 <img src={imagen1} style={{width:'100%', marginTop: '25%'}}/>
             </div>

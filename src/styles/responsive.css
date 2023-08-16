@@ -49,3 +49,26 @@
         display: none;
     }
 }
+
+
+/* //////////////////////////////////////index ///////////////////////////////////////////////////////////// */
+.icons-mp-responsive-index{
+    display: none;
+}
+
+@media all and (max-width: 992px) {
+    .icons-mp-responsive-index{
+        display: block;
+        
+    }
+    .icons-mp-desktop-index{
+        display: none;
+    }
+}
+
+@media all and (max-width: 530px) {
+    .responsive-icons-mp{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
