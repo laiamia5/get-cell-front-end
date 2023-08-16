@@ -16,12 +16,13 @@ import Catalogo from "./sections/Catalogo";
 import UncontrolledExample from './Carrusel2'
 import IConsMpDesktop from "./sections/IconsMpDesktop";
 import IConsMpMobile from "./sections/IconsMpMobile";
+import Menu from "./Menu";
 
 
 export default function Index () {
     
     return(
-    <div className="fondo icons-violet" >
+    <div className="fondo " >
         <NavCategorias/>
         <div class="page-banner home-banner fondo">
             <div class="container h-100">
@@ -53,6 +54,8 @@ export default function Index () {
         {/* <div style={{marginTop: '5%'}}>jf</div> */}
         <Carousel />
         <Fidelizar/>
+
+        <Menu/>
     </div>
     )
 }

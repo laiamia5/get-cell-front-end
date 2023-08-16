@@ -5,7 +5,7 @@ import Icon3 from './Icon3'
 
 export default function IConsMpMobile () {
     return(
-        <div className='icons-mp-responsive-index'>
+        <div className='icons-mp-responsive-index icons-violet'>
              <div class="page-section features ">
                 <div class="container">
                     <div class="justify-content-center" style={{display: 'block', width: '100%'}} >

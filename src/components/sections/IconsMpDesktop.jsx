@@ -5,7 +5,7 @@ import Icon3 from './Icon3'
 
 export default function IConsMpDesktop () {
     return(
-        <div className='icons-mp-desktop-index'>
+        <div className='icons-mp-desktop-index icons-violet'>
              <div class="page-section features ">
             <div class="container">
                     <div class="row justify-content-around">
