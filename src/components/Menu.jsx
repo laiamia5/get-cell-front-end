@@ -4,8 +4,21 @@ import home from '../tools/imgs/home.svg'
 import mensaje from '../tools/imgs/mensaje2.svg'
 import carrito from '../tools/imgs/carrito.svg'
 import shop from '../tools/imgs/store2.svg'
+import { useState } from "react";
+import {useNavigate} from 'react-router'
 
 export default function Menu (){
+  const [estado, setEstado] = useState()
+  const navigate = useNavigate()
+
+  const cambiarClases = async (event) => {
+    let todos = document.querySelectorAll('.btn-menu')
+    await todos.forEach((el) => {
+      if(el.classList.contains("button-active")) el.classList.remove("button-active")
+    })
+    event.target.classList.add("button-active")
+  }
+
 
     return(
         <div className="body_menu" style={{background: 'transparent'}}>
@@ -39,7 +52,14 @@ export default function Menu (){
     <div class="main-tabs-wrapper">
       <ul class="main-tabs">
         <li>
-          <button class="round-button"  data-translate-value="300%" data-color="purple">
+          <button 
+          class="round-button btn-menu" 
+          onClick={(e) => {
+            cambiarClases(e)
+            navigate('/')
+            }}  
+          data-translate-value="300%" 
+          data-color="purple">
             <img src={home} alt="" />
             {/* <svg fill="currentColor" viewBox="0 0 16 16">
               <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
@@ -48,7 +68,10 @@ export default function Menu (){
         </li>
         
         <li>
-          <button class="round-button gallery active"  data-translate-value="100%" data-color="blue">
+          <button class="round-button btn-menu" onClick={(e) =>{ 
+            cambiarClases(e)
+            navigate('/contacto')
+            }}  data-translate-value="100%" data-color="blue">
             <img src={mensaje} alt="" />
             {/* <svg fill="currentColor" viewBox="0 0 16 16">
               <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -57,7 +80,10 @@ export default function Menu (){
           </button>
         </li>
         <li>
-          <button class="round-button" data-translate-value="200%" data-color="green" style={{transform: 'scale(1.2)'}}>
+          <button class="round-button btn-menu" onClick={(e) =>{ 
+            cambiarClases(e)
+            navigate('/tienda')
+            }} data-translate-value="200%" data-color="green" style={{transform: 'scale(1.2)'}}>
             {/* <svg fill="currentColor" viewBox="0 0 16 16">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
               <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
@@ -66,7 +92,10 @@ export default function Menu (){
           </button>
         </li>
         <li>
-          <button class="round-button"  data-translate-value="400%" data-color="orange">
+          <button class="round-button btn-menu" onClick={(e) =>{ 
+            cambiarClases(e)
+            navigate('/carrito')
+            }} data-translate-value="400%" data-color="orange">
             {/* <svg fill="currentColor" viewBox="0 0 16 16">
               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
             </svg> */}
@@ -74,7 +103,10 @@ export default function Menu (){
           </button>
         </li>
         <li>
-          <button class="round-button" data-translate-value="0" data-color="red">
+          <button class="round-button btn-menu" onClick={(e) => {
+            cambiarClases(e)
+            navigate('/inicio-sesion')
+            }} data-translate-value="0" data-color="red">
             <span class="avatar">
               <img src="https://images.pexels.com/photos/3756985/pexels-photo-3756985.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="user avatar" />
             </span>

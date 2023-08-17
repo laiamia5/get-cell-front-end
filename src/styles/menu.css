@@ -229,3 +229,17 @@
     display: none;
 }
 
+
+
+button.button-active{
+  background-color: #d1f4ff;
+  transition: 1s;
+}
+
+button.button-active > img{
+  filter: opacity(0.4) drop-shadow(0 0 0 blue);
+}
+
+button.button-active:focus{
+  outline: none !important;
+}
