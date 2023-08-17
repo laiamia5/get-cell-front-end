@@ -77,6 +77,13 @@
     width: 2.8rem;
     transform: translate(0, 0);
   }
+
+  .round-button > img {
+    pointer-events: none;
+    height: 2.8rem;
+    width: 2.8rem;
+    transform: translate(0, 0);
+  }
   
   .main-slider {
     pointer-events: none;
