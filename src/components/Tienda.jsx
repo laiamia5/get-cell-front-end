@@ -13,7 +13,9 @@ export default function Tienda (){
   const [page, setPage] = useState(0)
 
   useEffect(() => {
-    buscar_producto_por().then((res) => setData(res) )
+    buscar_producto_por()
+    .then((res) => setData(res) )
+    .catch((err => console.log(err) ))
   }, [])
 
   useEffect(() => {
