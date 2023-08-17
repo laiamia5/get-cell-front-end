@@ -34,7 +34,7 @@ export default function Nav () {
 //  },[location])
 
     return(
-      <div style={{marginBottom: '1%'}}>
+      <div style={{marginBottom: '1%'}} className="nav-responsive-designe">
     <div class="back-to-top"></div>
 
     <header style={{height: '80px'}}>

@@ -5,6 +5,18 @@
   }
 }
 
+@media (max-width: 800px) {
+  div.nav-categorias{
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-responsive-designe{
+    display: none !important;
+  }
+}
+
 .botones-nav{
   background-color: #ccc !important;
   border-radius: 50% !important;

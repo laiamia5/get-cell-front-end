@@ -6,7 +6,7 @@ export default function Menu (){
     return(
         <div className="body_menu" style={{background: 'transparent'}}>
 
-        <nav class="amazing-tabs" style={{boxShadow: '0 0.1rem 1rem -0.4rem rgba(0, 0, 0, 0.12)', marginTop: '1%'}}>
+        <nav class="amazing-tabs" style={{boxShadow: '0 0.1rem 1rem -0.4rem rgba(0, 0, 0, 0.12)', marginTop: '1%', }}>
   <div class="filters-container">
     <div class="filters-wrapper">
       <ul class="filter-tabs">
