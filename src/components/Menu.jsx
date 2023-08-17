@@ -1,7 +1,7 @@
 import React from "react";
 import '../styles/menu.css'
 import home from '../tools/imgs/home.svg'
-import mensaje from '../tools/imgs/mensaje1.svg'
+import mensaje from '../tools/imgs/mensaje2.svg'
 
 export default function Menu (){
 
