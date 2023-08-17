@@ -1,7 +1,9 @@
 import React from "react";
 import '../styles/menu.css'
 import home from '../tools/imgs/home.svg'
-import mensaje from '../tools/imgs/mensaje3.svg'
+import mensaje from '../tools/imgs/mensaje2.svg'
+import carrito from '../tools/imgs/carrito.svg'
+import shop from '../tools/imgs/shop.svg'
 
 export default function Menu (){
 
@@ -56,17 +58,19 @@ export default function Menu (){
         </li>
         <li>
           <button class="round-button" data-translate-value="200%" data-color="green">
-            <svg fill="currentColor" viewBox="0 0 16 16">
+            {/* <svg fill="currentColor" viewBox="0 0 16 16">
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
               <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-            </svg>
+            </svg> */}
+            <img src={shop} alt="" />
           </button>
         </li>
         <li>
           <button class="round-button"  data-translate-value="400%" data-color="orange">
-            <svg fill="currentColor" viewBox="0 0 16 16">
+            {/* <svg fill="currentColor" viewBox="0 0 16 16">
               <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-            </svg>
+            </svg> */}
+            <img src={carrito} alt="" />
           </button>
         </li>
         <li>
