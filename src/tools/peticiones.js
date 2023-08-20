@@ -31,10 +31,7 @@ export const buscar_producto_por = async (nombre, categoria) => {
         // Manejo de errores de conexión u otros errores
         console.error('Error al obtener los datos:', error);
 
-        // Aquí puedes mostrar un mensaje en lugar de romper la página
-        const errorDiv = document.createElement('div');
-        errorDiv.textContent = 'Sin resultados';
-        document.body.appendChild(errorDiv);
+        
 
         // Devuelve un valor para indicar que ocurrió un error
         return undefined;
