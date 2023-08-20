@@ -10,26 +10,36 @@ export const obtener_productos = async () => {
     await axios
     .get(`${url}/productos`)
     .then((res) => resp = res.data)
-    .catch((err) => console.log(err))
+    .catch((err) => resp = undefined)
     return resp
 }
 
 export const buscar_producto_por = async (nombre, categoria) => {
     let urlSearch;
-    let response;
-    console.log(nombre, categoria)
+    console.log(nombre, categoria);
 
-    if(nombre && categoria) urlSearch = `${url}/productos/buscar?nombre=${nombre}&categoria=${categoria}`
-    else if(nombre && !categoria) urlSearch = `${url}/productos/buscar?nombre=${nombre}`
-    else if(!nombre && categoria ) urlSearch = `${url}/productos/buscar?categoria=${categoria}`
-    else  urlSearch = `${url}/productos/buscar`
+    if (nombre && categoria) urlSearch = `${url}/productos/buscar?nombre=${nombre}&categoria=${categoria}`;
+    else if (nombre && !categoria) urlSearch = `${url}/productos/buscar?nombre=${nombre}`;
+    else if (!nombre && categoria) urlSearch = `${url}/productos/buscar?categoria=${categoria}`;
+    else urlSearch = `${url}/productos/buscar`;
 
-    await axios
-    .get(urlSearch)
-    .then((res) => response = res.data)
-    .catch((err) => console.log(err))
-    return response
-}
+    try {
+        const response = await axios.get(urlSearch);
+        console.log(urlSearch);
+        return response.data;
+    } catch (error) {
+        // Manejo de errores de conexión u otros errores
+        console.error('Error al obtener los datos:', error);
+
+        // Aquí puedes mostrar un mensaje en lugar de romper la página
+        const errorDiv = document.createElement('div');
+        errorDiv.textContent = 'Sin resultados';
+        document.body.appendChild(errorDiv);
+
+        // Devuelve un valor para indicar que ocurrió un error
+        return undefined;
+    }
+};
 
 export const obtener_un_producto = async (id) => {
     let response;

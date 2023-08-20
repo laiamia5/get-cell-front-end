@@ -14,7 +14,11 @@ export default function Tienda (){
 
   useEffect(() => {
     buscar_producto_por()
-    .then((res) => setData(res) )
+    .then((res) => {
+      console.log(res)
+     if(res == undefined || res == null) setData(undefined)
+     else setData(res)
+    })
     .catch((err => console.log(err) ))
   }, [])
 
@@ -49,7 +53,8 @@ export default function Tienda (){
     }
   }
 
-    return(
+ if(data !== undefined ){   
+  return(
         <>
         <Aside/>
   <main style={{marginLeft: '250px'}}>
@@ -86,5 +91,9 @@ export default function Tienda (){
   </main>
 
         </>
-    )
+    )}else if(data === undefined){
+      <div class="pagination justify-content-center holaaaaaa">
+      <p className="page-item" > no se encontraronresultados de su busqueda</p> 
+    </div>
+    }
 }

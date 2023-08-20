@@ -9,16 +9,20 @@ import imagen2 from '../../tools/imgs/imagen.png'
 import Card from './Card' 
 import {obtener_productos} from '../../tools/peticiones'
 import { useEffect, useState } from "react";
+import CardLoading from "./CardLoading";
 
 export default function Productos (){
   const [elemento, setElemento] = useState()
   useEffect(() => {
-    obtener_productos().then((res) => setElemento(res.slice(0, 7)))
+    obtener_productos()
+    .then((res) => setElemento(res.slice(0, 7)))
+    .catch((err) => setElemento(undefined))
   }, [])
 
-    return(
+   if(elemento !== undefined) {
+   return(
         <>
-         <div class="page-section " style={{paddingTop: '0'}}>
+         <div class="page-section" style={{paddingTop: '0'}}>
           <div class="container">
             {/* <div class="text-center wow fadeInUp">
               <div class="subhead">Nuestro stock</div>
@@ -53,5 +57,14 @@ export default function Productos (){
     </div> 
   
         </>
-    )
+    )}else{
+     return( 
+      <div class="page-section" style={{paddingTop: '0', display: 'flex', flexWrap: 'wrap'}}>
+              <CardLoading/>
+              <CardLoading/>
+              <CardLoading/>
+              <CardLoading/>
+      </div> 
+     )
+    }
 }
