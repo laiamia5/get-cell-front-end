@@ -6,7 +6,7 @@ import '../../styles/cardloading.css'
 
 export default function CardLoading (){
     return(
-        <div class="col-md-6 col-lg-3 py-3 wow fadeInUp">
+        <div class="col-md-4 col-lg-3 py-3 wow fadeInUp">
             <div class="card-blog">
                     <img src={imgload}  style={{maxWidth: '200px'}} alt="" />
                     <div class="body" style={{paddingTop: '10px'}}>

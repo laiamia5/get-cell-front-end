@@ -46,25 +46,32 @@ export default function Productos (){
                   </div>
                 </div>
               </div>
-          {elemento?.map((e) => <Card props={e} />)}
-         {/* =======acac  */}
-        </div>
+              {elemento?.map((e) => <Card props={e} />)}
+          </div>
   
-        <div class="text-center">
-          <a href="blog.html" class="btn btn-outline-primary rounded-pill">Mostrar más </a>
-        </div>
-      </div> 
-    </div> 
+            <div class="text-center">
+              <a href="blog.html" class="btn btn-outline-primary rounded-pill">Mostrar más </a>
+            </div>
+          </div> 
+        </div> 
   
         </>
     )}else{
      return( 
-      <div class="page-section" style={{paddingTop: '0', display: 'flex', flexWrap: 'wrap'}}>
+      <>
+        <div class="page-section" style={{paddingTop: '0'}}>
+          <div class="container">
+            <div class="row my-5">
               <CardLoading/>
               <CardLoading/>
               <CardLoading/>
               <CardLoading/>
-      </div> 
+            </div>
+          </div>
+        </div>
+      </>
+            
+       
      )
     }
 }
