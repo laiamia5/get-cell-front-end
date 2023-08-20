@@ -1,6 +1,7 @@
 import React from "react";
 import imgload from '../../tools/imgs/loading.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../../styles/cardloading.css'
 
 
 export default function CardLoading (){

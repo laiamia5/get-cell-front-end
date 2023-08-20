@@ -1,0 +1,13 @@
+@keyframes loading-animation {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+.div-loading{
+    animation-name: loading-animation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
