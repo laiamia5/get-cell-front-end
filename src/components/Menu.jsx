@@ -26,7 +26,7 @@ export default function Menu (){
         <nav class="amazing-tabs" style={{boxShadow: '0 0.1rem 1rem -0.4rem rgba(0, 0, 0, 0.12)', marginTop: '1%', }}>
   <div class="filters-container">
     <div class="filters-wrapper">
-      <ul class="filter-tabs">
+      <ul class="filter-tabs" style={{background: '#d3d0ff'}}>
         <li>
           <button class="filter-button filter-active" data-translate-value="0">
             New

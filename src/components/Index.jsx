@@ -6,6 +6,7 @@ import Productos from './sections/Productos'
 import Contacto from './Contacto'
 import Footer from './Footer'
 import '../styles/responsive.css'
+import Interes from "./sections/Interes";
 
 import PhoneAnimation from "./sections/PhoneAnimation";
 import pic from '../tools/imgs/picback.png'
@@ -54,6 +55,8 @@ export default function Index () {
         {/* <div style={{marginTop: '5%'}}>jf</div> */}
         <Carousel />
         <Fidelizar/>
+
+        <Interes/>
 
     </div>
     )
