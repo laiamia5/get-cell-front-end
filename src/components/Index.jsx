@@ -18,6 +18,7 @@ import UncontrolledExample from './Carrusel2'
 import IConsMpDesktop from "./sections/IconsMpDesktop";
 import IConsMpMobile from "./sections/IconsMpMobile";
 import Menu from "./Menu";
+import Tabbar from './sections/Tabbar'
 
 
 export default function Index () {
@@ -45,7 +46,7 @@ export default function Index () {
         </div>
 {/* arreglar el responsive de los iconos */}
 {/* <Catalogo/> */}
-
+ 
         <UncontrolledExample/>
 
        <IConsMpDesktop />

@@ -5,8 +5,16 @@ import Icon3 from './Icon3'
 
 export default function IConsMpDesktop () {
     return(
+        <div>
+           
         <div className='icons-mp-desktop-index icons-violet'>
+        
              <div class="page-section features ">
+             <div class="text-center wow fadeInUp">
+                <div class="subhead">Why Choose Us</div>
+                <h2 class="title-section">Your <span class="marked">Comfort</span> is Our Priority</h2>
+                <div class="divider mx-auto"></div>
+            </div>
             <div class="container">
                     <div class="row justify-content-around">
                     <Icon2></Icon2>
@@ -52,6 +60,7 @@ export default function IConsMpDesktop () {
                 </div>
             </div> 
         </div>   
+        </div>
         </div>
     )
 }

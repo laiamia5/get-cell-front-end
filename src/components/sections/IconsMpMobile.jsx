@@ -7,6 +7,11 @@ export default function IConsMpMobile () {
     return(
         <div className='icons-mp-responsive-index icons-violet'>
              <div class="page-section features ">
+             <div class="text-center wow fadeInUp">
+                <div class="subhead">Why Choose Us</div>
+                <h2 class="title-section">Your <span class="marked">Comfort</span> is Our Priority</h2>
+                <div class="divider mx-auto"></div>
+            </div>
                 <div class="container">
                     <div class="justify-content-center" style={{display: 'block', width: '100%'}} >
                         <div class="col-md-12 col-lg-12 py-3 wow fadeInUp" >

@@ -22,6 +22,7 @@ import CondicionesServicio from './components/CondicionesServicio'
 import FinalizarCompra from './components/FinalizarCompra';
 import Faq from './components/Faq'
 import Menu from './components/Menu';
+import Tabbar from './components/sections/Tabbar'
 
 function App() {
   const dispatch = useDispatch()
@@ -34,7 +35,8 @@ function App() {
     <div className="App ">
       <ToastContainer/>
       <Nav/>
-      <Menu/>
+      {/* <Menu/> */}
+      <Tabbar/>
 
       <Routes>
         <Route path='/' element={<Index/>}/>
