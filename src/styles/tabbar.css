@@ -145,7 +145,7 @@
 
   @media all and (max-width: 767px) and (min-width: 500px)  {
     .body-tabbar{
-        display: block;
+        display: flex;
       } 
   }
 
@@ -153,6 +153,6 @@
 
   @media all and (max-width: 499px) {
     .body-tabbar{
-        display: block;
+        display: flex;
       } 
   }
