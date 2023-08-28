@@ -33,7 +33,7 @@ export default function IniciarSesion (){
               
               <form action="#">
                 <div className="py-2">
-                  <input type="text" className="form-control input-inicio-sesion"  placeholder="Email" name='email'  onChange={(e) => setear(e.target.name, e.target.value)}/>
+                  <input type="text" className="form-control input-inicio-sesion"  placeholder="✉ Email" name='email'  onChange={(e) => setear(e.target.name, e.target.value)}/>
                 </div>
                 <div className="py-2">
                   <input className="form-control" type='password' placeholder="🔒︎ Contraseña"  name='contraseña' onChange={(e) => setear(e.target.name, e.target.value)}/>
