@@ -4,6 +4,7 @@ import { obtener_productos , buscar_producto_por} from "../tools/peticiones";
 import { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom";
 import Aside from "./sections/Aside";
+import '../styles/responsive.css'
 // import { useLocation } from "react-router-dom";
 // import { useSearchParams } from "react-router-dom";
 
@@ -57,7 +58,7 @@ export default function Tienda (){
   return(
         <>
         <Aside/>
-  <main style={{marginLeft: '250px'}}>
+  <main style={{marginLeft: '250px'}} className="main-tienda-responsive">
     <div class="page-section" style={{minHeight: '600px'}}>
       <div class="container">
 {/* ----------------------------------- si no encuentra nada--------------------------- */}

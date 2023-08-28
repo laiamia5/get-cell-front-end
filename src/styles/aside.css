@@ -173,3 +173,9 @@
 	animation-duration: 1.5s !important;
 	transition: max-height 0.3s ease;
 } */
+
+@media all and (max-width: 400px) {
+ aside.sidebar{
+	display:none !important;
+ }
+}

@@ -72,3 +72,13 @@
         justify-content: center;
     }
 }
+
+/* //////////////////////////////////////////     tienda    //////////////////////////////////////////////////////// / */
+
+
+@media all and (max-width: 530px) {
+    .main-tienda-responsive{
+        margin-left: 0 !important;
+       }
+}
+

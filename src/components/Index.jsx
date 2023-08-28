@@ -24,7 +24,7 @@ import Tabbar from './sections/Tabbar'
 export default function Index () {
     
     return(
-    <div className="fondo " >
+    <div className="fondo" >
         <NavCategorias/>
         <div class="page-banner home-banner fondo">
             <div class="container h-100">

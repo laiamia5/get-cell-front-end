@@ -1,14 +1,17 @@
 import React from "react"
 import '../../styles/tabbar.css'
 import home from '../../tools/imgs/home.svg'
+import {useNavigate} from 'react-router-dom'
 
 export default function Tabar (){
+    const navigate = useNavigate()
+
     return(
         <div className="body-tabbar">
             <nav class="tabbar">
                 <div>
                     <input id="menu-1" type="radio" name="menu" />
-                    <label for="menu-1">
+                    <label for="menu-1" onClick={() => navigate('/')}>
                         <div className="div-icon-tab"></div>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
                         <g fill="#6c7486" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{mixBlendMode: "normal", stroke: "none !important"}}><g transform="scale(5.33333,5.33333)"><path style={{stroke: 'none'}} d="M39.5,43h-9c-1.381,0 -2.5,-1.119 -2.5,-2.5v-9c0,-1.105 -0.895,-2 -2,-2h-4c-1.105,0 -2,0.895 -2,2v9c0,1.381 -1.119,2.5 -2.5,2.5h-9c-1.381,0 -2.5,-1.119 -2.5,-2.5v-19.087c0,-2.299 1.054,-4.471 2.859,-5.893l14.212,-11.199c0.545,-0.428 1.313,-0.428 1.857,0l14.214,11.199c1.805,1.422 2.858,3.593 2.858,5.891v19.089c0,1.381 -1.119,2.5 -2.5,2.5z"></path></g></g>
@@ -16,19 +19,19 @@ export default function Tabar (){
                         <span>Inicio</span>
                     </label>
                     <input id="menu-2" type="radio" name="menu"/>
-                    <label for="menu-2">
+                    <label for="menu-2" onClick={() => navigate('/tienda')}>
                         <div className="div-icon-tab"></div>
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACjUlEQVR4nO1Yz2sTURDe6kXQg6A39aBHC4I/epEqnrxZFY3e/HHwR3ZeTN2ZRG8Lzc681Yr4Ryhq/QfEo571KBUKelIUL4qgYk3kRXfbYNK8bdJtaN4HDzaw38z3vZk3L6znOTg4DAeKKGOAMqdIGiu5AGXO5OqreEB9BEi+rLR4lZgg/lYiOdof8YFMKJTveYlXC5X4qSq60JN4RdE5QPmVt3iVLp5XxJeWufNcVsT11RMviYk6oL7RUyUcHDIgS3+WkE8nPCB5Ys1FnknzVXQhS861bwDM/LU2EB1LhaA8sOUB8f2We4aseT9sDMzaBvSr8egiHlsLQZ5KeEXiPRkq99qihTi2C8hvPK8xkgpBGbPk1aES7VvI2Bix/4/F0tXA5eDOVoX8oauIQCb+Ny8Ps7RPAiB9stulCSTv4aZs8WwAlehAZxM8DyST7Xi+H25SJM+WEPIUcXpjO65CRkD53VF8S9UsYCoBKLdMq5iD3QyC/Oga6v0toomLJeTdye9CYWY9oFxUxC8A+evfJc8VRRfCMFyX8qrxKKBcXRzrXxs+NpvXzIkyCyjaeuezQlXkrNk1QH5bqsbbbXnFoLZDkbwzXB/5jJc3zofhBkVyr6VvkT+bXu7GBdKnzLst54nkronZV5Fmrvukjyus7TTBr1yPtvmoDyvkaUD51HnUyctmWwV6b7kcbjbLPCsUH4hfLTEYPgLJbZPD5DI5i5N6lwr4hNGS3YDtbM5pec4AuQo0BqKFSkHtYDeuH8Tjy+H6HXh9NdALP4+8KZwBchVouBZS7hDL2ppCfhCPL8mp8KGBNjAQN7HnDIirwHC0EHT4xLgaBsDmk2IbA9zORN4GwGhAjjIbcHAYEvwBIZ/Hu/ptiVUAAAAASUVORK5CYII="/ >
                         <span>Tienda</span>
                     </label>
                     <input id="menu-3" type="radio" name="menu"/>
-                    <label for="menu-3">
+                    <label for="menu-3" onClick={() => navigate('/inicio-sesion')}>
                         <div className="div-icon-tab"></div>
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFMElEQVR4nO2aa2gcVRTHbxp81KrVovWJIOL7EUEtIq0g1hdFlOqqFVH8sm3m3tl055xN2iIOTeac2TTWB4hYn2gpYoxVoQqiqNW2Cr4+KCrSYqgfFLVqU1FrqytndjfZ3WzS3WTMZtb5wXyZx+79/++5j3PvVSomJiYm5r/BZGiBRl6jkT4yyDsN0M8a+GuNvMkAm2XQN1c1I7bTc5lBes8g58a7NPBeMSiT6T1CNQsaebkG3ncg8RVGbE9luk9XUcc4tKoe4eUX/agdPkNFFePQjQbpn4kbwDmN/BlA3ywVNe5y3UMN8uBkxJdcrooaGskOSbxEwS/JruxsFSU08JawDAiuDN+qokKyKzvbIO0P0wAN9KSKCjqdPT/U2s+PCG+rqGBn6IqwDZDRQEWFFPgXhW4A8BYVFZYv904IvQkAb1BRQgN/FXIfsFRFCYOUDVH8/lSKjlNRYhn0zdVAQyG1/0dVFDFA94TQ+++KXO2PkGvRyC9MIvT/shy6UkUZgL5ZBmhj/WFPQxb6N6jmICeRgJLU1Njm37GBzlHNRjrtzjFIKzTy+xr47/Jxnn7SwM/YyFer/wOu6x5sd2ZPbu/Mnh25VDcmJiYmZgwsXHO8bIQYpM2SwSUS/a1qkqm1Rn7CAL2qwU9alnu4mrbCgR8btQME/KlGul2Wyev5vY5M95mFPcTfKuYLvxrk1dNqr0Aj2QfK/CSpkZrUwHdbndlzbds9svi9bT90yNK0d5IB7zoN1K2Rt9YwYxyU/caGCk+n187UwOsnk+wY5D0T+hb4Q5PxE40W/24Y+X7dl0OrSqPHpP226mV05xigxTLrDFV8ItHfaoBeboj4fO2npBzG4SUa+Xvpd2ygm2XdoB3pghTQeTb2nJbviIPk6gcxIzQDDPLqhokPIoCXBOUA8mr9RjrpcMSn/bZC222IeA1MUo5kct1BBqi/jqh5RL6ZvAFA26ZeOD0ucwANdJuUQYZADfT6BH7rTem7JizecrLzG1Dje+2VdOxIKXItBmig/B0a0sj3m05vnizGyhDbDnyJBu6tMo8YCAzM9J5YtwEa+cUGhP3zgfnoXWiQ1lWKN8AfS4c3VplTXdlTNNInVc3NeBfXLD6dXjvTAP8x9Qb4C+X/DdJTVZ4PFk+VBQYB9Wugb4ORAfkl2aIrWYnaUSW61tdsgEF/4dSLpx2u684Iog/4rcrnNnjXB2UDb1G1ypHmU1xYDd4pf75HO94103ro09J+wVs0vLqM9EGJuO1ijrR3qfGxf4N3FZfcNNA3Jc8erFm8IAcUpj4CAqH77LR3aZVm8FxwL+MnaoikOwrfPzt8D2hA1YOWk5wNMEAuC+iWQhmGN1mk189XjN9Vg4krAwOAHhi5R2/Ua8DWRhlQrMGKKMxHAHp31hwBwBtKImCjihoaqLtE2E7JSdpX+EePl4pr5N35PiDXIiNEiQGfJ537jlFRwXKy80VMmUCgxfJMZojVDmUFmy+F02Ua/ZtGGQT0hRijooABfriKgO+KSY4F/uUy1ZU8RSP9GQybGVowslpVUvsVzSgS2Pn0dnQtI3853j6icegseafim03BrLLTm6eiRHJ4POenywXR7zJEyr6igZ5TZXlNO3SVHKyQyVCF+NeKk6vIkpRUGOmVukcToG0dHe5RqhlwXXeGBrp31C7z2EPh5qTrHqaaDR2E/5gToGFzZEVaNSOmkOVJLx9khGm/TbJASYMLHeBuOZhhIbWrZiSR6G+1kK+V88nVnsv9abubFBMTE6OmIf8CW/kH973f584AAAAASUVORK5CYII="/>
                         <span>Usuario</span>
                     </label>
                     <input id="menu-4" type="radio" name="menu"/>
-                    <label for="menu-4">
+                    <label for="menu-4" onClick={() => navigate('/carrito')}>
                         <div className="div-icon-tab"></div>
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADRUlEQVR4nO2aXYhNURTH9+QzRQqhfJR4EG8evPgoCk/eJg+SUJc5a58746x1Z8ZEp7hr3WtSKA8+MikpiXj1QCkSD0RJkcKD8vUgnyUz2jQ+4p57z+2e2Xvu7F/9X1d7/c/aa5/9oZTH4/F4PB7PH7S2nhsV4L65bR2leZXU3h5PVs1GGMaTNPEJIP6gSQaqCuVeWOCVqlkAkos1Jf63CR/zyIvVcCdf2LsgdfK/xMfUcCcgWVevAUDyQhOXXRBgKWemcmoD8l3lOZq4v/4qcErPTUWnNgFQjjsw+IYIUK6mNiCXOzZGI+8GlEfDvxq4v1DYPzG1CUkA8mX7idWuunpBEprkkO2kUuipajSaeLsDidUkILnQcAMCLK2wnVjNirin4QZAt0wZNhUQFdeqLNDEr20nV4vCXTwtKwOu2U7OSgMcBFCOjsgGOAhE3G47QSsNcJCQZM2IbYCGsLM8y+nkUb6Z1Uplx0ALkLxz1gCSGyprNPFt24lWVEE2DIUBpxwt/6vmQDdzAwBLXbaT/Ucod3PRgamZJ2+ASNY79NW/AfLJhm99kwh2yvzkQfEzTfwkQz0GlOvmDLCts7xQDTWtredGaZTPlQwIUJaqZkcT308oyy2q2QHks5UbEh9UzY4miRP6wHuNciTbOwDZE0S82poBEBXXOrL8nTF/p0NuQC6OJ2jkN9YN+DnltikbaOTdjhhw3ooBcRyPdWJfYMuA3weldk2wvuzGPypB9gDJWwvJn7bSBCs1RnPN/nOzlPFVuOk/WFr134F4LLM5jsebpUkT9xmFheLWMDw8rt54ZsMDKGzWfCDpzWNpiXKVfFd5DpA8/Geukjxoi/bNThsPiAFQvv4dj/sBea9yj4EWQLlVsWGR3EzTsMwLNLPft3r8lQZd4OXVunYQlZc16tWaMVu5hEYJqhpA3FZzPOLHiQYQf1IuEaBsqmZAGMnGWuMB8Z3kePxSuURHR3EmEH+pOGCUzwH1zqg1nkYuVjGgT7mGjrgnYcDdaWKZ98iVpwG/NLdUykX0j17w+x0BoLwClB31VpVGvvTnagDEV+p6BziUxHE8OugsLzJqxGWF2XSZH6B8nqc3ZoQej8fj8Xg8amTzHedSzqByZqnhAAAAAElFTkSuQmCC"/>
                         <span>Carrito</span>
