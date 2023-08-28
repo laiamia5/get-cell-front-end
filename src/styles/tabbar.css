@@ -80,6 +80,7 @@
     --y: -24px;
     --s: 1;
     color: #542ad7 !important;
+    filter: contrast(50%) sepia(0.5) hue-rotate(200deg) saturate(1000%);
   }
   .tabbar > div input:checked + label span {
     --s: 1;

@@ -26,7 +26,7 @@ export default function Tabar (){
                     </label>
                     <input id="menu-4" type="radio" name="menu"/>
                     <label for="menu-4">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABRElEQVR4nO3WsUoDQRAG4AUrWy3UUvANrKwsbAyCXUAEfYCb8cjejCAiWHgzSsBnEKzEF0ivoJ2dvURbLSwCihrZMypWd5fbrEL8YbthP2ZnuT1jhjLIco6s3d66AZKV34C7yPISWZ0Jgn8GWY4znGTHhAwkuuxgYL0MClt7OAosHSB9jWOZCIojSetj1ul6YFjx52Xzs4D0LAfemx4MLLe5XQPr9QA6PioCN73DLKu58MamzPuF5S3i5mQuXK+fjgDrvcdur3LRr+MmOfHY8UFhOCJd8wVHiSwUhq3dHXMPhodj7rgvoikTJLmo3DFJqxSawYlse4BtabjRSKeA5LEC+gBbOm76CbDOuWcSWZ4Lz5X0yf1gxLQ/2xc6vEFKl5D1zr0wSGmtal3hZBt9z7Bdte7vw0hprbdpO2JdrFr3HxMq73eI3UnBgVKrAAAAAElFTkSuQmCC"/>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABGElEQVR4nN2Tv0oDQRCHR7CwVHyAdD6A+BBGQR/B2puBQGYO0m3h7i8+REAQfARL/2BKO0vLaKOVjQRBjdwhsZCQ27tF1A+mm5lvd5gh+hew4lwME1a8iQUkF4iFYSEoQzHmHlaTSwpEw+lUVDvCBc0iy7GVQHAzU0A0WWDFbRMBd7EzZ0w+r91ccUnz2O/1V0TxXGM075z7DaoCK45qCI4rNS8FuV+Paq4YZ3rQohhEcR3x+sOo5sWhseKxystFcbLn3FKcwDAot8LCWbG6lJJOxy2LhVdWvHAXa5Qa59yiaHiqsUXDypLM+rti4SHyyK7o1yDqt8VwzxruRH27ad43yoKv74+a5v28QNS3P4tHmWGzad7f5gNbQewjIbNCnAAAAABJRU5ErkJggg=="/>
                         <span>Carrito</span>
                     </label>
                     
