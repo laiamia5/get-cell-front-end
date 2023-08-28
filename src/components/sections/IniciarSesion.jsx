@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Icon from '../sections/IconUser'
 import IconUSer from "../sections/IconUser";
 import svgg from '../../tools/imgs/4.svg'
+import '../../styles/responsive.css'
 
 export default function IniciarSesion (){
     const dispatch = useDispatch()
@@ -24,7 +25,7 @@ export default function IniciarSesion (){
       Object.keys(response).length !== 0  && navigate('/perfil')
     }, [response])
     return(
-      <div style={{display: 'flex', justifyContent: 'center' }} className="fondo">
+      <div style={{display: 'flex', justifyContent: 'center' }} className="fondo loguin-responsive">
         <div className="align-items-center justify-content-center">
             <div className=" py-5">
               <div className="subhead">Cuentas</div>
