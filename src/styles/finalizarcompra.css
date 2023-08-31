@@ -5,3 +5,17 @@
 .swal2-html-container{
     color: grey !important
 }
+
+/* //////////////////alerta sweet resp ////////////////////////////////// */
+
+
+
+
+@media all and (max-width: 530px) {
+    .swal2-container > .swal2-popup{
+        padding: 20px !important;
+    }
+    .swal2-container{
+        background: url("../tools/imgs/nyan-cat.gif") r no-repeat rgba(0, 0, 123, 0.4) !important;
+    }
+}

@@ -87,3 +87,15 @@
         height: 100vh;
     }
 }
+
+/* //////////////////alerta sweet resp ////////////////////////////////// */
+
+
+
+
+@media all and (max-width: 530px) {
+
+    .swal2-container{
+        background: url("../tools/imgs/nyan-cat.gif") right bottom no-repeat rgba(0, 0, 123, 0.4) !important;
+    }
+}
