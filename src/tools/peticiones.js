@@ -53,7 +53,6 @@ export const obtener_un_producto = async (id) => {
 
 
 export const crear_usuario = async (obj) => {
-    console.log(obj)
     obj['dni'] = Number(obj.dni)
 
     let response;
@@ -66,7 +65,6 @@ export const crear_usuario = async (obj) => {
 }
 
 export const iniciarSesionCon = async (obj) => {
-    console.log(obj)
     let respo 
     await axios.post(`${url}/usuarios/signin`, obj)
     .then((res) => {
@@ -81,7 +79,6 @@ export const verificarToken = async (token) => {
     await axios.get(`${url}/usuarios/perfil/${token}`)
     .then((res) => {
         respo = res.data
-        console.log(res.data)
     })
     .catch((err) => console.log(err) )
     return respo

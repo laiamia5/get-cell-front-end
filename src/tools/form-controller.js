@@ -1,4 +1,5 @@
-
+import axios from 'axios'
+const host = process.env.REACT_APP_BACKEND_URL
 
 export const controlarFormulario = async (datos) => {
 
@@ -36,5 +37,25 @@ export const controlarFormulario = async (datos) => {
   
       let valores =  Object.values(obj) //array de valor del objeto
       if( valores.includes(false) ) return false
-      else return true
+      else {
+        completarDatosUsuario(datos)
+        return true
+      }
+  }
+
+
+const completarDatosUsuario = (usuario) => {
+  const usu = {				
+    direccion_barrio: usuario.direccion_barrio,
+    direccion_calles: usuario.direccion_calles,
+    direccion_localidad: usuario.direccion_localidad,
+    direccion_provincia: usuario.direccion_provincia,
+    telefono: usuario.telefono,
+    codigo_postal: usuario.codigo_postal
+  }
+
+  axios.get(`${host}/usuarios/buscar/${usuario.dni}`)
+      .then((res) => {
+        axios.put(`${host}/usuarios/${res.data.id}`, usu)
+      })
   }

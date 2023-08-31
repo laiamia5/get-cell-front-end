@@ -7,6 +7,7 @@ const host = process.env.REACT_APP_BACKEND_URL
 export let procesarCompra = (productos, usuario, medioDePago) => {
 	let idDelProd = [];
 	let respuesta;
+
   
 	const realizarCompraBack = (productos, usuario) => {
 	  return new Promise((resolve, reject) => {
@@ -39,31 +40,16 @@ export let procesarCompra = (productos, usuario, medioDePago) => {
 	};
   
 	const realizarCompraBack2 = (usuario) => {
-		//primero me fijo si el usuario ya esta registrado en la base de datos
-		//si el usuario ya existe y la prop registrado es true usare ese usuario
-		//si el usuario existe pero no esta registrado o el usuario no existe lo creare
-		//a este punto ya tengo el id del usuario y el array de pedidos solo hacen falta los datos de la compra
+
 	  return new Promise((resolve, reject) => {
-		axios.get(`${host}/usuarios/${usuario.dni}`)
-		  .then(async (res) => {
+		axios.get(`${host}/usuarios/buscar/${usuario.dni}`)
+		  .then(async(res) => {
 			if (res.data) {
 			  await finalizarLaCompraBack(res.data.id);
-			} else {
-			  const response = await axios.post(`${host}/usuarios/signup`, {
-				apellido: usuario.apellido,
-				direccion_barrio: usuario.direccion_barrio,
-				direccion_calles: usuario.direccion_calles,
-				direccion_localidad: usuario.direccion_localidad,
-				direccion_provincia: usuario.direccion_provincia,
-				dni: usuario.dni,
-				email: usuario.email,
-				nombre: usuario.nombre,
-				telefono: usuario.telefono,
-				codigo_postal: usuario.codigo_postal
-			  });
-			  await finalizarLaCompraBack(response.data.id);
+				resolve();
+			}else{
+				return alert('debe ingresar con el dni con el que se registro')
 			}
-			resolve();
 		  })
 		  .catch((err) => {
 			console.log(err);
@@ -89,27 +75,28 @@ export let procesarCompra = (productos, usuario, medioDePago) => {
 		}
 	  };
 
-  //HARDCODIE EL ENVIOOOOOOOOO!!!!!!!!!! Y EL HOST
+//   //HARDCODIE EL ENVIOOOOOOOOO!!!!!!!!!! Y EL HOST
 	return new Promise((resolve, reject) => {
-	  realizarCompraBack(productos, usuario)
-		.then(() => {
-		  console.log(respuesta);
-		  if(respuesta.medio_de_pago === 'mercado pago'){
-			axios
-			.post(`http://localhost:3001/pagar/${respuesta.id}`,[...respuesta.pedidos, {cantidad: 1, producto: {nombre: 'envio', precio: 1}}])
-			.then((res) => {
-				console.log(res.data)
-				resolve(res.data)
+	
+			realizarCompraBack(productos, usuario)
+			.then(() => {
+				if(usuario == undefined) return alert('error en los datos proporcionados, revise los datos y vuelve a intene')
+			  	if(respuesta.medio_de_pago === 'mercado pago'){
+				axios
+				.post(`${host}/pagar/${respuesta.id}`,[...respuesta.pedidos, {cantidad: 1, producto: {nombre: 'envio', precio: 1}}])
+				.then((res) => {
+					console.log(res.data)
+					resolve(res.data)
+				})
+				.catch((err) => alert(err))
+			  }else{
+				resolve(respuesta)
+			  }
 			})
-			.catch((err) => alert(err))
-		  }else{
-			resolve(respuesta)
-		  }
-		})
-		.catch((err) => {
-		  console.log(err);
-		  reject(err);
-		});
+			.catch((err) => {
+			  console.log(err);
+			  reject(err);
+			});
 	});
   };
 

@@ -28,7 +28,7 @@ export default function FinalizarCompra (){
 
 /////////////////////////////// ALERTA PARA PREGUNTAR SI DESEA TRAER LOS DATOS DE SU PERFIL ///////////////////////////
         let todos_inputs = document.querySelectorAll('.form-control')[0]
-        console.log(todos_inputs.value)
+        // console.log(todos_inputs.value)
         if(todos_inputs.value == ''){
             Swal.fire({
                 icon: "question",
@@ -64,10 +64,10 @@ export default function FinalizarCompra (){
  /////////////////////////////CONTROLA EL FORMULARIO Y VERIFICA EL MEDIO DE PAGO/////////////////////////////////////////////////
 
     const handleForm = () => {
-        let todos_inputs = document.querySelectorAll('.form-control')
-        let ob = {}
+        let todos_inputs = document.querySelectorAll('.form-control')//agarrar los valores de todos los inputs
+        let ob = {} //lugar donde se guardaran los valores 
         todos_inputs.forEach((e) => {
-            ob[e.name] = e.value
+            ob[e.name] = e.value//recorre los valores del input para agregarlos al guardar      
         })
         delete ob.undefined
         controlarFormulario(ob).then((res) => {
@@ -105,17 +105,15 @@ export default function FinalizarCompra (){
     }
 
     const completarCompra = () => {
-        // verificarToken(token).then((res) =>{ 
-        //     procesarCompra(productos, res.id, 'transferencia bancaria')
-        // })
+        verificarToken(token).then((res) =>{ 
+            procesarCompra(productos, res, true) //medio de pago true, transferencia bancaria, false para mp
+        })
+
     }
 
     return(
         <>
             <ToastContainer />
-            
-
-            {/* <!-- Checkout Start --> */}
             <div class="container-fluid pt-5">
                 <div class="row px-xl-5">
                     <div class="col-lg-8">
