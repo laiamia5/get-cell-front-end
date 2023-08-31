@@ -6,7 +6,6 @@ export const controlarFormulario = async (datos, token) => {
 let tokendni;
   await verificarToken(token).then((res) =>{ 
     tokendni = String(res.dni)
-    console.log(tokendni, datos.dni)
   })
 
     let obj = {

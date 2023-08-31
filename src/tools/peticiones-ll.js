@@ -80,7 +80,6 @@ export let procesarCompra = (productos, usuario, medioDePago) => {
 	
 			realizarCompraBack(productos, usuario)
 			.then(() => {
-				if(usuario == undefined) return alert('error en los datos proporcionados, revise los datos y vuelve a intene')
 			  	if(respuesta.medio_de_pago === 'mercado pago'){
 				axios
 				.post(`${host}/pagar/${respuesta.id}`,[...respuesta.pedidos, {cantidad: 1, producto: {nombre: 'envio', precio: 1}}])

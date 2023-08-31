@@ -20,7 +20,7 @@ export default function FinalizarCompra (){
     const dispatch = useDispatch()
     const productos = useSelector((state) => state.carrito)
     const [total, setTotal] = useState(0)
-    const [datos, setDatos] = useState()
+    const [pagar, setPagar] = useState(true)
     const token = useSelector((state) => state.token)
 
     useEffect(() => {
@@ -106,7 +106,7 @@ export default function FinalizarCompra (){
 
     const completarCompra = () => {
         verificarToken(token).then((res) =>{ 
-            procesarCompra(productos, res, true) //medio de pago true, transferencia bancaria, false para mp
+            procesarCompra(productos, pagar, true) //medio de pago true, transferencia bancaria, false para mp
         })
     }
 
@@ -243,13 +243,13 @@ export default function FinalizarCompra (){
                                 <div class="card-body">
                                     <div class="form-group">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" name="payment" id="paypal"  />
+                                            <input type="radio" class="custom-control-input" name="payment" id="paypal" onClick={() => setPagar(false)}/>
                                             <label class="custom-control-label" for="paypal">Mercado Pago</label>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-radio">
-                                            <input type="radio" class="custom-control-input" name="payment" id="directcheck" />
+                                            <input type="radio" class="custom-control-input" name="payment" id="directcheck"  onClick={() => setPagar(true)}/>
                                             <label class="custom-control-label" for="directcheck">Transferencia bancaria</label>
                                         </div>
                                     </div>
