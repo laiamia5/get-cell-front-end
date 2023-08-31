@@ -1,7 +1,13 @@
 import axios from 'axios'
+import { verificarToken } from './peticiones'
 const host = process.env.REACT_APP_BACKEND_URL
 
-export const controlarFormulario = async (datos) => {
+export const controlarFormulario = async (datos, token) => {
+let tokendni;
+  await verificarToken(token).then((res) =>{ 
+    tokendni = String(res.dni)
+    console.log(tokendni, datos.dni)
+  })
 
     let obj = {
       nombre : false,
@@ -31,6 +37,7 @@ export const controlarFormulario = async (datos) => {
       if(datos.direccion_calles.length == 0)  return 'El campo "calle y altura" es obligatorio'
       else obj.direccion_calles = true
       if(datos.dni.length !== 8 || datos.dni == 0) return  'el campo dni debe tener 8 caracteres'
+      if(tokendni !== datos.dni) return 'el campo "dni" no es el mismo con el que se registro'
       else obj.dni = true
       if(datos.codigo_postal.length === 0) return 'El campo "código postal" es obligatorio'
       else obj.codigo_postal = true

@@ -70,7 +70,7 @@ export default function FinalizarCompra (){
             ob[e.name] = e.value//recorre los valores del input para agregarlos al guardar      
         })
         delete ob.undefined
-        controlarFormulario(ob).then((res) => {
+        controlarFormulario(ob, token).then((res) => {
             if(res !== true){
                 toast.error(res, {
                     position: toast.POSITION.TOP_RIGHT
@@ -108,7 +108,6 @@ export default function FinalizarCompra (){
         verificarToken(token).then((res) =>{ 
             procesarCompra(productos, res, true) //medio de pago true, transferencia bancaria, false para mp
         })
-
     }
 
     return(
