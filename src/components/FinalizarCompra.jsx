@@ -15,6 +15,8 @@ import { verificarToken } from "../tools/peticiones";
 import { UseSelector } from "react-redux/es/hooks/useSelector";
 import { controlarFormulario} from "../tools/form-controller";
 import { procesarCompra } from "../tools/peticiones-ll";
+import { finalizar_y_vaciar } from "../redux/actions";
+
 
 export default function FinalizarCompra (){
     const dispatch = useDispatch()
@@ -22,6 +24,7 @@ export default function FinalizarCompra (){
     const [total, setTotal] = useState(0)
     const [pagar, setPagar] = useState(true)
     const token = useSelector((state) => state.token)
+    const navigate = useNavigate()
 
     useEffect(() => {
         reducir(productos).then((res) => setTotal(res))
@@ -93,7 +96,10 @@ export default function FinalizarCompra (){
                                 left bottom
                                 no-repeat
                             `,
-                            }) 
+                            }).then(response => {
+                                Swal.close();
+                                navigate('/')
+                            });
                             completarCompra()
                     }else{
                         toast.error('seleccione un medio de pago', {
@@ -105,8 +111,9 @@ export default function FinalizarCompra (){
     }
 
     const completarCompra = () => {
-        verificarToken(token).then((res) =>{ 
-            procesarCompra(productos, pagar, true) //medio de pago true, transferencia bancaria, false para mp
+        verificarToken(token).then(async (res) =>{ 
+           await procesarCompra(productos, res, pagar) //medio de pago true, transferencia bancaria, false para mp
+           dispatch(finalizar_y_vaciar())
         })
     }
 

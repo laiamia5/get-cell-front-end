@@ -137,3 +137,18 @@ export const reducir = async (obj) => {
 
 //////////////////traer datos del perfil ////////////////////////////
 
+
+
+/////////////////obtener compras ///////////////////////////////////////////
+
+export const obtener_compras = async () => {
+    let comprate;
+    await axios.get(`${url}/compras`)
+    .then((res) => {
+        comprate = res.data
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+    return comprate
+}
